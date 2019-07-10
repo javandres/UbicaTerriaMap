@@ -1,9 +1,9 @@
 {
   "homeCamera": {
-    "north": -8,
-    "east": 158,
-    "south": -45,
-    "west": 109
+    "north": 5.99,
+    "east": -70.83,
+    "south": -9.19,
+    "west": -93.16
   },
   "catalog": [
     {
@@ -12,6 +12,57 @@
       "preserveOrder": true,
       "isOpen": true,
       "items": [
+        {
+          "name": "IGM",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Mapa Base Ecuador",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/geoserver/mapabase/wms?service=wms&version=1.3.0",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Fotografías Aéreas",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/orto/wms?service=wms&version=1.3.0",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Modelo Digital de Terreno",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/dtm/wms",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Galápagos",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/galapagos25/wms",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:25k",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/25k/wms",
+              "type": "wms-getCapabilities"
+            }
+          ]
+          
+        },
+        {
+          "name": "Ministerio del Ambiente",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+          "type": "wms-getCapabilities"
+        },
         {
           "name": "Data.gov.au",
           "type": "ckan",
