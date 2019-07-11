@@ -7,7 +7,7 @@
   },
   "catalog": [
     {
-      "name": "Example Datasets",
+      "name": "Datasets Ecuador",
       "type": "group",
       "preserveOrder": true,
       "isOpen": true,
@@ -64,13 +64,27 @@
           "type": "wms-getCapabilities"
         },
         {
-          "name": "Agricultura",
+          "name": "Ministerio de Educación",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "url": "http://geoportal.educacion.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "MIES",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "url": "http://geoportal.inclusion.gob.ec/geoserver/aseguramiento_no_contributivo/wms",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Ministerio de Agricultura",
           "type": "group",
           "preserveOrder": true,
           "isOpen": false,
           "items":[
             {
-              "name": "Cobertura y Uso de la Tierra",
+              "name": "Cobertura y Uso de la Tierra",  // http://geoportal.sigtierras.gob.ec:8080/GeoserverViewer/
               "description": "[Licence](http://www.ga.gov.au/copyright)",
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
               "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
@@ -160,23 +174,383 @@
               "url": "http://ortofotos.sigtierras.gob.ec/geoserver/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             }
-            
-            
-
-
-            
-
-
-            
-            
-                        
-            
-            
           ] 
-        }  
+        },
+        {
+          "name": "Ministerio de Minería - ARCOM",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Catastro Minero",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/rest/services/Concesiones/CatastroMineroNacional/MapServer",
+              "type": "esri-mapServer-group"
+            },
+            {
+              "name": "Catastro Minero- Tipo Conseción",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/rest/services/Gads/Concesiones_Produccion/MapServer",
+              "type": "esri-mapServer-group"
+            },
+            {
+              "name": "Catastro Minero- Producción",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/rest/services/Gads/Concesiones_Produccion/FeatureServer",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Cartografía Base",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/services/CartografiaBase/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+              "type": "wms-getCapabilities"
+            }
+            
+            
+
+          ]
+        },    
+        {
+          "name": "Gestión de Riesgos",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Actividad Volcánica",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/Actividad_Volc%C3%A1nica/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Movilidad Humana",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/MovilidadHumana/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Volcanes Mundo",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/mundo_volcanes/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "COEs Activos - Comietes de Operación de Emergencias",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "COE Parroquial Activo",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/1",
+                  "type": "esri-featureServer"
+                },
+                {
+                  "name": "COE Cantonal Activo",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/0",
+                  "type": "esri-featureServer"
+                },
+                {
+                  "name": "COE Provincial Activo",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/2",
+                  "type": "esri-featureServer"
+                }
+              ]
+            },    
+            
+            {
+              "name": "Pronóstico de Deslizamientos",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/pronostico/FeatureServer",
+              "type": "esri-featureServer-group"
+            },
+            {
+              "name": "Eje Vial con Amenazas",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/eje_vial/FeatureServer",
+              "type": "esri-featureServer-group"
+            },
+          ]
+        },    
+        {
+          "name": "Hidrocarburos",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "EPP PetroEcuador",
+              "description": "[Licence](http://mhgeoportal.hidrocarburos.gob.ec/)",
+              "dataCustodian": "[EPPP](http://www.hidrocarburos.gob.ec/)",
+              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Ministerio de Hidrocarburos",
+              "description": "[Licence](http://mhgeoportal.hidrocarburos.gob.ec/)",
+              "dataCustodian": "[INEC](http://www.ga.gov.au/)",
+              "url": "http://mhgeoportal.hidrocarburos.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            }
+          ]  
+
+        },
+        {
+          "name": "INEC",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[INEC](http://www.ga.gov.au/)",
+          "url": "https://geoinec.inec.gob.ec/geoinec/ows?service=wfs&version=2.0.0&request=GetCapabilities",
+          "type": "wfs-getCapabilities"
+        },
+        {
+          "name": "Ins. Evaluación Educativa",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[INEC](http://www.ga.gov.au/)",
+          "url": "http://geoportal.evaluacion.gob.ec:8080/geoserverineval/INEVAL/wms?",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Coódigo Postal",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[INEC](http://www.ga.gov.au/)",
+          "url": "https://www.codigopostal.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Universidad del Azuay",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "UDA: Visor Senplades Zona 6",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/VisorSenplades/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Planificación Territorial",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/PlanificacionTerritorial/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Riesgos Cuenca",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/riesgos_cuenca/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Cobertura Vegetal 5k Ricaurte",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/cobertura_vegetal_5k/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Cobertura Vegetal Azuay",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/cob_ord_rural/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Inventario Forestal",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/inventario_forestal/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Azuay 250k",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/azuay_250k/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Ortofotos Drone",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/ortofotos_drone/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Calidad Ambiental",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/calidad_ambiental/wms?",
+              "type": "wms-getCapabilities"
+            }
+            
+            
+            
+            
+          ]
+        },    
+        {
+          "name": "GADS Provinciales",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "GAD Provincial Orellana",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                  {
+                    "name": "GAD Provincial Orellana -  Datos Libres",
+                    "description": "[Licence](http://www.ga.gov.au/copyright)",
+                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                    "url": "https://geo.gporellana.gob.ec:443/geoinfo/datoslibres/ows?SERVICE=WMS&",
+                    "type": "wms-getCapabilities"
+                  },
+                  {
+                    "name": "GAD Provincial Orellana - Estern",
+                    "description": "[Licence](http://www.ga.gov.au/copyright)",
+                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                    "url": "https://geo.gporellana.gob.ec:443/geoinfo/extern/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                    "type": "wms-getCapabilities"
+                  },
+                  {
+                    "name": "GAD Provincial Orellana - GADPO",
+                    "description": "[Licence](http://www.ga.gov.au/copyright)",
+                    "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                    "url": "https://geo.gporellana.gob.ec:443/geoinfo/gadpo/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                    "type": "wms-getCapabilities"
+                  }
+                ]   
+            },
+            {
+              "name": "GAD Provincial Imbabura",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "Ambiente",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "isOpen": false,
+                  "items":[
+                    {
+                      "name": "Educación Ambiental", //http://mapas.imbabura.gob.ec/arcgis/rest/services
+                      "type": "wms",
+                      "url": "http://mapas.imbabura.gob.ec/arcgis/services/AMBIENTE/EA_escuelas_Service/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+                      "opacity": 1,
+                      "layers":"SIGAmbiente.LUISV.Educa_escuelas"
+
+                    },
+                    {
+                      "name": "Forestación",
+                      "type": "wms",
+                      "url": "http://mapas.imbabura.gob.ec/arcgis/services/AMBIENTE/forestacion_service/MapServer/WMSServer?service=WMS&version=1.3.0&request=GetCapabilities",
+                      "layers":"SIGAmbiente.LUISV.Forestacion"
+
+                    },
+                    {
+                      "name": "Reforestación 2017",
+                      "type": "wms",
+                      "url": "http://mapas.imbabura.gob.ec/arcgis/services/AMBIENTE/reforestacion2017_Service/MapServer/WMSServer?request=GetCapabilities&service=WMS",
+                      "layers":"SIGAmbiente.LUISV.Reforestacion2017",
+                      "opacity": 1,
+                    }
+                    
+
+                    
+                  ]
+                },    
+                {
+                  "name": "Cobertura y Uso del Suelo",
+                  "type": "wms",
+                  "url": "http://mapas.imbabura.gob.ec/arcgis/services/SIL2018/CoberturaUsoSuelo_Service/MapServer/WMSServer?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "opacity": 0.9,
+                  "layers": "SIGPlanificacion.LUISV.cobertura_uso_suelo"
+                }
+              ]
+            }    
+         ]
+        }, 
+        {
+          "name": "GAD Municipales",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "GAD QUITO",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://geo.quito.gob.ec:8080/geoserver/smiq/wms?service=WMS&version=1.1.0",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "GAD Cuenca",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "GAD CUENCA",
+                  "description": "[Licence](http://www.ga.gov.au/copyright)",
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                  "url": "http://ide.cuenca.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "type": "wms-getCapabilities"
+                }
+              ]
+            }
+            // {
+            //   "name": "Otavalo", 
+            //   "type": "wms",
+            //   "url": "http://geoportal.otavalo.gob.ec/geoserver/otavalo/wms?&version=1.1.0",
+            //   "opacity": 1,
+            //   "layers":"ejevial"
+
+            // } 
+            
+          ]
+        }    
+       
+        
 
         
       ]
-    }
+    },
+    {
+      "name": "Datasets Global",
+      "type": "group",
+      "preserveOrder": true,
+      "isOpen": true,
+      "items": [
+        {
+          "name": "NASA Global Imagery Browse Services for EOSDIS",
+          "description": "[Licence](NASA)",
+          "dataCustodian": "[NASA Global Imagery](https://earthdata.nasa.gov)",
+          "url": "https://gibs-b.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi",
+          "type": "wms-getCapabilities"
+        }
+      ]
+    }    
   ]
 }

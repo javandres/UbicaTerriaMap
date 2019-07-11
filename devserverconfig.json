@@ -24,11 +24,24 @@
         "sample.aero3dpro.com.au",
         "mapainteractivo.ambiente.gob.ec",
         "ambiente.gob.ec",
-        "uazuay.edu.ec",
+        "gis.uazuay.edu.ec:8080",
         "geoportal.sigtierras.gob.ec:8080",
         "geoportal.agricultura.gob.ec",
         "181.112.137.169:8080",
-        "181.112.137.164:8080"
+        "181.112.137.164:8080",
+        "geo.gporellana.gob.ec:443",
+        "geo.gporellana.gob.ec",
+        "geo.quito.gob.ec:8080",
+        "mapas.imbabura.gob.ec",
+        "geoinec.inec.gob.ec:443",
+        "geoinec.inec.gob.ec",
+        "ide.cuenca.gob.ec",
+        "www.codigopostal.gob.ec",
+        "geoportal.evaluacion.gob.ec:8080",
+        "geoportal.otavalo.gob.ec",
+        "geoportal.educacion.gob.ec",
+        "mhgeoportal.hidrocarburos.gob.ec",
+        "sig.eppetroecuador.ec",
+        "181.211.37.231:1028"
     ]
 }
-
