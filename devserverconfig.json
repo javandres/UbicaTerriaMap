@@ -24,7 +24,11 @@
         "sample.aero3dpro.com.au",
         "mapainteractivo.ambiente.gob.ec",
         "ambiente.gob.ec",
-        "uazuay.edu.ec"
+        "uazuay.edu.ec",
+        "geoportal.sigtierras.gob.ec:8080",
+        "geoportal.agricultura.gob.ec",
+        "181.112.137.169:8080",
+        "181.112.137.164:8080"
     ]
 }
 
