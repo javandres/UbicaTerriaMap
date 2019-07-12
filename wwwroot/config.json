@@ -9,16 +9,16 @@
         googleAnalyticsOptions: null,
         /* Text that appears at the bottom of the map */
         disclaimer: {
-            text: "Disclaimer: This map must not be used for navigation or precise spatial analysis",
+            text: "",
             url: ""
         },
-        /*
+        
         // Text that will be added to any pages printed from your site.
         printDisclaimer:{
-            text:"Put your print disclaimer here.",
-            url: "#"
+            text:"UBICA Ecuador 2019",
+            url: "http://www.ubica.ec"
         },
-        */
+        
          
         // Pop-up disclaimer that will be shown at the start
         // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
@@ -33,13 +33,13 @@
         //     enableOnLocalhost: true // If false, don't show this when running on localhost
         // },
         
-        /*
+        
         developerAttribution: {
-            text: "Your organisation",
-            link: "http://www.example.com"
-        },*/
+            text: "UBICA Ecuador",
+            link: "https://www.ubica.ec"
+        },
         // This is used in various text messages. You should also set <title> in index.html
-        appName: "UBICA Ecuador",
+        appName: "GEO - UBICAEcuador",
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
@@ -59,7 +59,9 @@
         mobileDefaultViewerMode: "2d",
         // Enable experimental features, since its nice to have the bleeding edge.
         // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
-        "experimentalFeatures": true
+        "experimentalFeatures": true,
+
+        "cesiumIonAccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiNGI1OTE0Ny1lMmJkLTRiYTMtYjFmYi1iZGFkYzVmZTU0NGQiLCJpZCI6MTMyOTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjI5NjA5MzV9.YbGb2Fq3RZFLhSoElFcnSgptdgB1Xi4vsKGTzYhPL98"
     }
 }
 

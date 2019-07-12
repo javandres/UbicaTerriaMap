@@ -84,6 +84,15 @@
           "isOpen": false,
           "items":[
             {
+              "name": "Ortofoto Nacional Ecuador",
+              "description": "[Licence](http://www.serviciometeorologico.gob.ec/)",
+              "dataCustodian": "[INAMHI](http://www.serviciometeorologico.gob.ec//)",
+              "url": "http://181.112.137.164:8080/geoserver/nacional/wms?SERVICE=WMS&VERSION=1.3.0",
+              "layers":"orto_ecuador",
+              "type": "wms",
+              "opacity":1
+            },
+            {
               "name": "Cobertura y Uso de la Tierra",  // http://geoportal.sigtierras.gob.ec:8080/GeoserverViewer/
               "description": "[Licence](http://www.ga.gov.au/copyright)",
               "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
@@ -176,6 +185,149 @@
             }
           ] 
         },
+        {
+          "name": "Instituto Geofísico",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Volcánes",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "Volcanes Clasificación por Estado de Actividad",
+                  "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Volcanes/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Desplazamiento GPS - Volcanes el Ecuador",
+                  "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/GPS_V/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Volcánes",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "isOpen": false,
+                  "items":[
+                    {
+                      "name": "Antisana",
+                      "type": "group",
+                      "preserveOrder": true,
+                      "isOpen": false,
+                      "items":[
+                        {
+                          "name": "Antisana Sismos",
+                          "description": "Se presenta la sismicidad registrada los últimos 180 días, asociados al volcán Antisana ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Antisana_sismos/MapServer/0",
+                          "type": "esri-mapServer",
+                          "opacity":1
+                         }
+                        
+                      ]  
+                    },
+                    {
+                      "name": "Cayambe",
+                      "type": "group",
+                      "preserveOrder": true,
+                      "isOpen": false,
+                      "items":[
+                        {
+                          "name": "Cayambe Amenaza",
+                          "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Amenaza/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cayambe Cenzia",
+                          "description": "Portencial caída de piroclástos (ceniza) asociada al volcán Cayambe con un escenario como el de San Marcos y un VEI entre 3 a 4",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Ceniza/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cayambe Sector",
+                          "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sector/MapServer/1",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cayambe Sismos",
+                          "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sismos/MapServer/0",
+                          "type": "esri-mapServer"
+                        }
+                      ]  
+                    },
+                    {
+                      "name": "Cerro Negro",
+                      "type": "group",
+                      "preserveOrder": true,
+                      "isOpen": false,
+                      "items":[
+                        {
+                          "name": "Cerro Negro Amenaza",
+                          "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Amenaza/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cerro Negro Balístico",
+                          "description": "Peligro volcánico asociado por caída de proyectiles balísticos al complejo volcánico Chiles - Cerro Negro",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Balistico/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cerro Negro Piroclastos",
+                          "description": "Caidas de ceniza asociado al complejo volcánico Chiles - Cerro Negro ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_piroclastos/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cerro Negro Sismos",
+                          "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_sismos/MapServer/0",
+                          "type": "esri-mapServer",
+                          "opacity":1
+                        },
+                        {
+                          "name": "Cerro Negro Población",
+                          "description": "Población en la zona de influencia del complejo volcánico Chiles - Cerro Negro. Datos a nivel de cantón, zona amanzanada y sector ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_poblacion/MapServer",
+                          "type": "esri-mapServer-group"
+                        }
+                        
+                        
+                        
+                      ]  
+                    }
+                    
+                    
+
+                  ]
+                }
+                
+              ]
+            }    
+            
+          ]
+        },    
         {
           "name": "Ministerio de Minería - ARCOM",
           "type": "group",
@@ -312,6 +464,48 @@
 
         },
         {
+          //http://geoportal.regulacionelectrica.gob.ec/visor/index.html 
+          "name": "Sector Eléctrico",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Generadoras Eléctricas",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/estaprueba/MapServer/0",
+              "type": "esri-mapServer",
+              "properties": "\"drawingInfo\":{\"renderer\": {\"type\":\"simple\", \"symbol\": {\"type\":\"esriSFS\",\"style\":\"esriSFSSolid\",\"color\":[255,0,0,255],\"outline\":{\"type\":\"esriSLS\",\"style\":\"esriSLSSolid\",\"color\":[0,255,0,255],\"width\":1}}}}}]&gdbVersion=&f=html"
+            },
+            {
+              "name": "Empresa Eléctrica Regional Centrosur",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "Red de Distribución",
+                  "description": "[Licence](http://www.ga.gov.au/copyright)",
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                  "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/RedesDist_EERCS/MapServer",
+                  "type": "esri-mapServer-group"
+                },
+                {
+                  "name": "Cartografía Base",
+                  "description": "[Licence](http://www.ga.gov.au/copyright)",
+                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+                  "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/Cartografia_EERCS/MapServer",
+                  "type": "esri-mapServer-group"
+                }
+                 
+                ]
+              }    
+            
+            
+          ]
+        },    
+        {
           "name": "Instituto Oceanográfico (INOCAR)",
           "type": "group",
           "preserveOrder": true,
@@ -388,8 +582,33 @@
             }
            
           ]
-        },    
+        },
         {
+          "name": "INAMHI - Instituto Nacional de Meteorología e Hidrología",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Estaciones Metereológicas",
+              "description": "[Licence](http://www.serviciometeorologico.gob.ec/)",
+              "dataCustodian": "[INAMHI](http://www.serviciometeorologico.gob.ec//)",
+              "url": "http://186.42.174.236:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"INAMHI:hidro_aws",
+              "type": "wms",
+              "opacity":1
+            },
+            {
+              "name": "Catálogo INAMHI",
+              "description": "[Licence](http://www.serviciometeorologico.gob.ec/)",
+              "dataCustodian": "[INAMHI](http://www.serviciometeorologico.gob.ec//)",
+              "url": "http://186.42.174.236:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            }
+          ]
+        },        
+        {
+           //http://200.110.88.36/geoinec/inec/wms
           "name": "INEC",
           "description": "[Licence](http://www.ga.gov.au/copyright)",
           "dataCustodian": "[INEC](http://www.ga.gov.au/)",
