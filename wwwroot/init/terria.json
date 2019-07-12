@@ -312,6 +312,84 @@
 
         },
         {
+          "name": "Instituto Oceanográfico (INOCAR)",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "SWAN - Modelo Simulación Oleaje",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/swan_ecuador_galapagos.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"Hsig",
+              "type": "wms",
+              "colorScaleMaximum":4,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/rainbow"
+              },
+              "description":"SWAN (Simulating Waves Nearshore), es un modelo de propagación de oleaje espectral que simula la energía contenida en las ondas en su propagación desde superficies oceánicas hasta las zonas costeras, esta herramienta de simulación de olas costeras llega a una resolución espacial es de 0.01 grados, complementando así a más detalle el comportamiento de las olas en las áreas cercanas a la costa del Ecuador, su pronóstico es de hasta 5 días."
+            },
+            {
+              "name": "Salinidad",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/salinidad.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"salinidad",
+              "type": "wms",
+              "colorScaleMaximum":36,
+              "colorScaleMinimum":30,
+              "parameters": {
+                "colorscalerange": "30,36",
+                "elevation": "0"
+              }
+            },
+            {
+              "name": "Temperatura del Aire a 2m",
+              "description": "WRF (Weather Research and Forecasting), este modelo es un sistema de predicción numérica de mesoescala para simulación atmosférica, diseñado tanto para la investigación atmosférica como para las necesidades operacionales de predicción. Cuenta con dos núcleos dinámicos, un sistema de asimilación de datos y una arquitectura de software que facilita la computación paralela y la extensibilidad del sistema. El modelo sirve a una amplia gama de aplicaciones meteorológicas a través de escalas de resolución de 5 kilómetros, su pronóstico es de hasta 3 días.",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"T_2m",
+              "type": "wms",
+              "colorScaleMaximum":35,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/rainbow"
+              }
+            },
+            {
+              "name": "Temperatura",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/temperatura.nc?SERVICE=WMS&VERSION=1.1.1",
+              "layers":"temperatura",
+              "type": "wms",
+              "colorScaleMaximum":30,
+              "colorScaleMinimum":15,
+              "dimensions": {
+                "elevation": 0
+              },
+              "disableUserChanges":false,
+              "displayChoicesBeforeLegend":true
+            },
+            {
+              "name": "Monitoreo Oceánico",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "TDS Oficial INOCAR",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/roms_his.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS",
+              "type": "wms-getCapabilities"
+            }
+           
+          ]
+        },    
+        {
           "name": "INEC",
           "description": "[Licence](http://www.ga.gov.au/copyright)",
           "dataCustodian": "[INEC](http://www.ga.gov.au/)",
