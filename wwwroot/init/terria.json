@@ -631,7 +631,7 @@
               "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
               "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/eje_vial/FeatureServer",
               "type": "esri-featureServer-group"
-            },
+            }
           ]
         },    
         {
