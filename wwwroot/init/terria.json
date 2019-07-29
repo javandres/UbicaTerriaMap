@@ -7,7 +7,201 @@
   },
   "catalog": [
     {
-      "name": "Datasets Ecuador",
+      "name": "Set de Datos por Tema",
+      "type": "group",
+      "preserveOrder": true,
+      "isOpen": true,
+      "items": [
+        {
+          "name": "Populares",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Ortofoto: Minas Ilegales: La Merced - Buenos aires",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec)",
+              "url": "http://www.geoportaligm.gob.ec/orto/wms?service=wms&version=1.3.0",
+              "layers":"igm:LaMercedDeBuenosAires",
+              "type": "wms",
+              "description":"Minas ilegales en parroquia La Merced de Buenos Aires, ubicada en el cantón Urcuquí, provincia de Imbabura.",
+              "zoomOnEnable":true,
+              "opacity":1
+            }
+          ]
+        },
+        {
+          "name": "Agua",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Velocidad de Infiltración del Agua - MAGAP",
+              "dataCustodian": "[MAGAP] https://www.agricultura.gob.ec/",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"vw_vi_ecuador",
+              "type": "wms",
+              "zoomOnEnable":true
+            }
+          ]
+        },
+        {
+          "name": "Clima / Metereología",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Comunicaciones",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Divisón Político Administrativa, Regiones, Fronteras",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Electricidad",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Elevación",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Información Marítima",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Imágenes Satelitales",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Infraestructura",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Medio Ambiente",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Minería",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        }, 
+        {
+          "name": "Población",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        }, 
+        {
+          "name": "Riesgos",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        }, 
+        {
+          "name": "Salud",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Social y Económico",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Suelo y Terreno",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Transporte",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Varios",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Vegetación",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        },
+        {
+          "name": "Volcanes",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+          ]
+        }     
+      ]
+    },    
+    {
+      "name": "Instituciones Ecuador",
       "type": "group",
       "preserveOrder": true,
       "isOpen": true,
