@@ -380,6 +380,14 @@
           ] 
         },
         {
+          //http://200.110.88.36/geoinec/inec/wms
+         "name": "SENAGUA",
+         "description": "SECRETARIA DEL AGUA",
+         "dataCustodian": "[SENAGUA](https://www.agua.gob.ec/)",
+         "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+         "type": "wfs-getCapabilities"
+       },
+       {
           "name": "Instituto Geofísico",
           "type": "group",
           "preserveOrder": true,
