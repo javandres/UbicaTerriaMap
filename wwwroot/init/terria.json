@@ -36,13 +36,204 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            
             {
-              "name": "Velocidad de Infiltración del Agua - MAGAP",
+              "name": "Ríos [EPPETROECUADOR]",
+              "dataCustodian": "[EPPETROECUADOR] http://sig.eppetroecuador.ec",
+              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"sigeppec:rios",
+              "type": "wms"
+            },
+            {
+              "name": "Velocidad de Infiltración del Agua [MAGAP]",
               "dataCustodian": "[MAGAP] https://www.agricultura.gob.ec/",
               "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=WMS&version=1.3.0&request=GetCapabilities",
               "layers":"vw_vi_ecuador",
-              "type": "wms",
-              "zoomOnEnable":true
+              "type": "wms"
+            },
+            {
+              "name": "Lagos y Lagunas a 50k [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:lago_laguna_a_50k",
+              "type": "wms"
+            },
+            {
+              "name": "Microcuencas Hidrográficas [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:microcuenca",
+              "type": "wms"
+            },
+            {
+              "name": "Subcuencas Hidrográficas [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:microcuenca",
+              "type": "wms"
+            },
+            {
+              "name": "Cuencas Hidrográficas [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:cuencas",
+              "type": "wms"
+            },
+            {
+              "name": "Sistemas Hídricos [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:sistemas",
+              "type": "wms"
+            },
+            {
+              "name": "Demarcaciones Hidrográficas [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:demarcaciones_hidrograficas_050k_a",
+              "type": "wms"
+            },  
+            {
+              "name": "Centros de Atención Ciudadana [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:UBICACION_CENTROS_ATENCION_CUIDADANO_ECU_50K",
+              "type": "wms"
+            },  
+            {
+              "name": "Pozos bna Aurorizaciones  [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:vw_pozos_bna_autorizaciones",
+              "type": "wms"
+            },  
+            {
+              "name": "Prestaciones de Servicios Comunitarios  [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:vw_prestadores_servicios_comunitarios",
+              "type": "wms"
+            },  
+            {
+              "name": "Prestadores de Servicios Públicos  [SENAGUA]",
+              "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+              "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"senagua:vw_prestadores_servicios_publicos",
+              "type": "wms"
+            },
+            {
+              "name": "Muestreo de calidad del Agua [MAE]",
+              "dataCustodian": "[Ministerio del Ambiente] https:/www.ambiente.gob.ec/",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:muestreo_calidad_agua",
+              "type": "wms"
+            },
+            {
+              "name": "Régimen de Inundación [MAE]",
+              "dataCustodian": "[Ministerio del Ambiente] https:/www.ambiente.gob.ec/",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:regimenes_inundacion",
+              "type": "wms"
+            },
+            {
+              "name": "Unidades Hidrográficas",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "Unidades Hidrográficas Nivel_1 [SENAGUA]",
+                  "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+                  "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"senagua:UNIDADES_HIDROGRAFICAS_ECU_N1_50K",
+                  "type": "wms"
+                },
+                {
+                  "name": "Unidades Hidrográficas Nivel_2 [SENAGUA]",
+                  "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+                  "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"senagua:UNIDADES_HIDROGRAFICAS_ECU_N1_50K",
+                  "type": "wms"
+                },
+                {
+                  "name": "Unidades Hidrográficas Nivel_3 [SENAGUA]",
+                  "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+                  "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"senagua:UNIDADES_HIDROGRAFICAS_ECU_N3_50K",
+                  "type": "wms"
+                },
+                {
+                  "name": "Unidades Hidrográficas Nivel_4 [SENAGUA]",
+                  "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+                  "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"senagua:UNIDADES_HIDROGRAFICAS_ECU_N4_50K",
+                  "type": "wms"
+                },
+                {
+                  "name": "Unidades Hidrográficas Nivel_5 [SENAGUA]",
+                  "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+                  "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"senagua:UNIDADES_HIDROGRAFICAS_ECU_N5_50K",
+                  "type": "wms"
+                },
+                {
+                  "name": "Unidades Hidrográficas Nivel_6 [SENAGUA]",
+                  "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+                  "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"senagua:UNIDADES_HIDROGRAFICAS_ECU_N6_50K",
+                  "type": "wms"
+                },
+                {
+                  "name": "Unidades Hidrográficas Nivel_7 [SENAGUA]",
+                  "dataCustodian": "[SENAGUA] https:/www.agua.gob.ec/",
+                  "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"senagua:UNIDADES_HIDROGRAFICAS_ECU_N7_50K",
+                  "type": "wms"
+                }
+              ]
+            },
+            {
+              "name": "Agencia de Regulación y Control del Agua [ARCA]",
+              "description": "[Licence](http://www.regulacionagua.gob.ec/)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://www.geoarca.gob.ec:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Instituto Oceanográfico (INOCAR)",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "SWAN - Modelo Simulación Oleaje",
+                  "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+                  "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/swan_ecuador_galapagos.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"Hsig",
+                  "type": "wms",
+                  "colorScaleMaximum":4,
+                  "colorScaleMinimum":0,
+                  "parameters": {
+                    "styles":"boxfill/rainbow"
+                  },
+                  "description":"SWAN (Simulating Waves Nearshore), es un modelo de propagación de oleaje espectral que simula la energía contenida en las ondas en su propagación desde superficies oceánicas hasta las zonas costeras, esta herramienta de simulación de olas costeras llega a una resolución espacial es de 0.01 grados, complementando así a más detalle el comportamiento de las olas en las áreas cercanas a la costa del Ecuador, su pronóstico es de hasta 5 días."
+                },
+                {
+                  "name": "Salinidad",
+                  "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+                  "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+                  "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/salinidad.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"salinidad",
+                  "type": "wms",
+                  "colorScaleMaximum":36,
+                  "colorScaleMinimum":30,
+                  "parameters": {
+                    "colorscalerange": "30,36",
+                    "elevation": "0"
+                  }
+                }
+               
+              ]
             }
           ]
         },
@@ -52,6 +243,179 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "SWAN - Modelo Simulación Oleaje",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/swan_ecuador_galapagos.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"Hsig",
+              "type": "wms",
+              "colorScaleMaximum":4,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/rainbow"
+              },
+              "description":"SWAN (Simulating Waves Nearshore), es un modelo de propagación de oleaje espectral que simula la energía contenida en las ondas en su propagación desde superficies oceánicas hasta las zonas costeras, esta herramienta de simulación de olas costeras llega a una resolución espacial es de 0.01 grados, complementando así a más detalle el comportamiento de las olas en las áreas cercanas a la costa del Ecuador, su pronóstico es de hasta 5 días."
+            },
+            {
+              "name": "Salinidad",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/salinidad.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"salinidad",
+              "type": "wms",
+              "colorScaleMaximum":36,
+              "colorScaleMinimum":30,
+              "parameters": {
+                "colorscalerange": "30,36",
+                "elevation": "0"
+              }
+            },
+            {
+              "name": "Viento [INOCAR]",
+              "description": "Automatically-generated vector field, composed of the fields eastward_wind and northward_wind",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"wind",
+              "type": "wms",
+              "colorScaleMaximum":20,
+              "colorScaleMinimum":0,
+              "parameters": {
+               
+              }
+            },
+            {
+              "name": "Dirección del Viento a 10m [INOCAR]",
+              "description": "La orientación del vector del viento en la horizontal. Para propósitos meteorológicos, la dirección del viento se define como la dirección desde la cual sopla el viento, y se mide en grados en la dirección de las agujas del reloj a partir del norte verdadero. Por ejemplo, un viento del oeste sopla del oeste, a 270° del norte. Un viento del norte sopla desde una dirección de 360°. La dirección del viento determina la del transporte de una pluma emitida.",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"wd_10m",
+              "type": "wms",
+              "colorScaleMaximum":360,
+              "colorScaleMinimum":0,
+              "parameters": {
+               
+              }
+            },
+            {
+              "name": "Velocidad del Viento a 10m [INOCAR]",
+              "description": "La orientación del vector del viento en la horizontal. Para propósitos meteorológicos, la dirección del viento se define como la dirección desde la cual sopla el viento, y se mide en grados en la dirección de las agujas del reloj a partir del norte verdadero. Por ejemplo, un viento del oeste sopla del oeste, a 270° del norte. Un viento del norte sopla desde una dirección de 360°. La dirección del viento determina la del transporte de una pluma emitida.",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"ws_10m",
+              "type": "wms",
+              "colorScaleMaximum":12,
+              "colorScaleMinimum":0,
+              "parameters": {
+               
+              }
+            },
+            {
+              "name": "Humedad relativa a 2m [INOCAR]",
+              "description": "",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"rh_2m",
+              "type": "wms",
+              "colorScaleMaximum":100,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/humedad"
+              }
+            },
+            {
+              "name": "Humedad relativa a Diferentes Niveles [INOCAR]",
+              "description": "",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"rh_p",
+              "type": "wms",
+              "colorScaleMaximum":100,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/humedad",
+                "elevation":"100.0"
+              }
+            },
+            {
+              "name": "Presipitación no Convectiva [INOCAR]",
+              "description": "",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"precip_g",
+              "type": "wms",
+              "colorScaleMaximum":280,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/precipitacion"
+              }
+            },
+            {
+              "name": "Temperatura de la Superficie [INOCAR]",
+              "description": "",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"T_p",
+              "type": "wms",
+              "colorScaleMaximum":50,
+              "colorScaleMinimum":0,
+              "parameters": {
+               
+              }
+            },
+            {
+              "name": "Temperatura de la Superficie del Mar [INOCAR]",
+              "description": "",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"SST",
+              "type": "wms",
+              "colorScaleMaximum":50,
+              "colorScaleMinimum":0,
+              "parameters": {
+               
+              }
+            },
+            {
+              "name": "Temperatura del aire a 2m [INOCAR]",
+              "description": "",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"T_2m",
+              "type": "wms",
+              "colorScaleMaximum":32,
+              "colorScaleMinimum":0,
+              "parameters": {
+               
+              }
+            },
+            {
+              "name": "Temperatura del aire a Diferentes Niveles [INOCAR]",
+              "description": "",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
+              "layers":"T_p",
+              "type": "wms",
+              "colorScaleMaximum":50,
+              "colorScaleMinimum":-50,
+              "parameters": {
+               
+              }
+            },
+            {
+              "name": "Estaciones de Monitoreo de aire [MAE]",
+              "dataCustodian": "[Ministerio del Ambiente] https:/ambiente.gob.ec/",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:calidad_aire",
+              "type": "wms"
+            },
+            {
+              "name": "Estaciones Metereológicas [INAMHI]",
+              "dataCustodian": "[INAMHI] https:/ambiente.gob.ec/",
+              "url": "http://186.42.174.236:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"INAMHI:hidro_aws",
+              "type": "wms"
+            }
+
           ]
         },
         {
@@ -380,7 +744,6 @@
           ] 
         },
         {
-          //http://200.110.88.36/geoinec/inec/wms
          "name": "SENAGUA",
          "description": "SECRETARIA DEL AGUA",
          "dataCustodian": "[SENAGUA](https://www.agua.gob.ec/)",
