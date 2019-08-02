@@ -432,6 +432,21 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "Provincias",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "AZUAY",
+                  "dataCustodian": "[INEC] https://www.inec.gob.ec/",
+                  "url": "https://geoinec.inec.gob.ec/geoinec/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"inec:AZUAY",
+                  "type": "wms"
+                }
+              ]
+            }
           ]
         },
         {
