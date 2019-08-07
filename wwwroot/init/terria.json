@@ -443,7 +443,7 @@
                   "dataCustodian": "[INEC] https://www.inec.gob.ec/",
                   "url": "https://geoinec.inec.gob.ec/geoinec/ows?service=wms&version=1.3.0&request=GetCapabilities",
                   "layers":"inec:AZUAY",
-                  "type": "wms"
+                  "type": "wfs"
                 }
               ]
             }
@@ -1188,7 +1188,7 @@
           ]
         },        
         {
-           //http://200.110.88.36/geoinec/inec/wms
+           //http://200.110.88.36/geoinec/inec/wms https://anda.inec.gob.ec/anda/index.php/catalog
           "name": "INEC",
           "description": "[Licence](http://www.ga.gov.au/copyright)",
           "dataCustodian": "[INEC](http://www.ga.gov.au/)",
@@ -1207,6 +1207,13 @@
           "description": "[Licence](http://www.ga.gov.au/copyright)",
           "dataCustodian": "[INEC](http://www.ga.gov.au/)",
           "url": "https://www.codigopostal.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Ecociencia",
+          "description": "[Licence](http://ecociencia.org/)",
+          "dataCustodian": "[ECOCIENCIA](http://ecociencia.org/)",
+          "url": "http://ecociencia.org/",
           "type": "wms-getCapabilities"
         },
         {
