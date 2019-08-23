@@ -46,6 +46,10 @@
         "coos.inocar.mil.ec:8080",
         "186.42.174.236:8080",
         "geoportal.senagua.gob.ec",
-        "www.geoarca.gob.ec:8080"
+        "www.geoarca.gob.ec:8080",
+        "app.sni.gob.ec",
+        "arcgis.eeq.com.ec",
+        "geoinformacion.centrosur.gob.ec:443",
+        "gis.eersa.com.ec"
     ]
 }

@@ -13,6 +13,26 @@
       "isOpen": true,
       "items": [
         {
+          "name": "Proyecto CELEC",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Inclinómetros",
+              "type": "csv",
+              "url": "http://localhost:8600/geoserver/celec/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=celec%3Aeb102_v_inclinometro_mes&maxFeatures=500000000&outputFormat=csv",
+              "tableStyle": {
+                  "colorMap": "white-orange-red",
+                  "dataVariable": "desplazamiento",
+                  "idColumns": ["est_id"],
+                  "scale": 2,
+                  "scaleByValue": true
+              }
+            }
+          ]
+        },    
+        {
           "name": "Populares",
           "type": "group",
           "preserveOrder": true,
@@ -28,6 +48,8 @@
               "zoomOnEnable":true,
               "opacity":1
             }
+            
+            
           ]
         },
         {
@@ -432,21 +454,58 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
-            {
-              "name": "Provincias",
-              "type": "group",
-              "preserveOrder": true,
-              "isOpen": false,
-              "items":[
                 {
-                  "name": "AZUAY",
-                  "dataCustodian": "[INEC] https://www.inec.gob.ec/",
-                  "url": "https://geoinec.inec.gob.ec/geoinec/ows?service=wms&version=1.3.0&request=GetCapabilities",
-                  "layers":"inec:AZUAY",
-                  "type": "wfs"
+                  "name": "Zonas Postales",
+                  "dataCustodian": "[UBICA Ecuador] https://geo.ubica.ec/",
+                  "url": "http://ubica.ec:8600/geoserver/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"regions:ZONAS_POSTALES",
+                  "type": "wms",
+                  "opacity":0.9
+                },
+                {
+                  "name": "Provincias",
+                  "dataCustodian": "[UBICA Ecuador] https://geo.ubica.ec/",
+                  "url": "http://ubica.ec:8600/geoserver/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"regions:NXPROVINCIAS",
+                  "type": "wms",
+                  "opacity":0.9
+                },{
+                  "name": "Cantones",
+                  "dataCustodian": "[UBICA Ecuador] https://geo.ubica.ec/",
+                  "url": "http://ubica.ec:8600/geoserver/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"regions:NXCANTONES",
+                  "type": "wms",
+                  "opacity":0.9
+                },
+                {
+                  "name": "Parroquias",
+                  "dataCustodian": "[UBICA Ecuador] https://geo.ubica.ec/",
+                  "url": "http://ubica.ec:8600/geoserver/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"regions:NXPARROQUIAS",
+                  "type": "wms",
+                  "opacity":0.9
+                },
+                {
+                  "name": "Zonas de Planificación [SENPLADES]",
+                  "dataCustodian": "[SENPLADES] https://www.planificacion.gob.ec/",
+                  "url": "http://app.sni.gob.ec/geoserver/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"base:zonas_planificacion",
+                  "type": "wms"
+                },
+                {
+                  "name": "Distritos Administrativos [SENPLADES]",
+                  "dataCustodian": "[SENPLADES] https://www.planificacion.gob.ec/",
+                  "url": "http://app.sni.gob.ec/geoserver/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"base:distritos_administrativos",
+                  "type": "wms"
+                },
+                {
+                  "name": "Circuitos Administrativos [SENPLADES]",
+                  "dataCustodian": "[SENPLADES] https://www.planificacion.gob.ec/",
+                  "url": "http://app.sni.gob.ec/geoserver/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+                  "layers":"base:circuitos_administrativos",
+                  "type": "wms"
                 }
-              ]
-            }
           ]
         },
         {
@@ -455,6 +514,215 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "Generadoras Eléctricas",
+              "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/estaprueba/MapServer/0",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Líneas de Transmisión",
+              "description": "Líneas de transmisión y subtransmisión a nivel nacional ",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Lineas/MapServer",
+              "type": "esri-mapServer"
+            },     
+            {
+              "name": "Paneles Solares",
+              "description": "Paneles solares de la E.E. Centro Sur y CNEL- Sucumbíos ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/PanelesSolares/MapServer",
+              "type": "esri-mapServer"
+            }, 
+            {
+              "name": "Proyectos Eléctricos",
+              "description": "Proyectos de generación hidroeléctricos, térmicos, eólicos, geotérmicos. Adicionalmente existe las áreas de los registros, levantamiento de campo, escrituras, certificados de intersección, contratos. Se excluyó los proyectos en estado Liquidado, No construcción, Operación Comercial, Revocado. ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/proyectos1/MapServer",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Subestaciones",
+              "description": "Subestaciones de transmisión, generación, distribución a nivel nacional ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Subestaciones/MapServer",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Infraestructura Eléctrica",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[ 
+                {
+                  "name": "CNEL - Guayaquil (Infraestructura Eléctrica) ",
+                  "description": "Proyectos de generación hidroeléctricos, térmicos, eólicos, geotérmicos. Adicionalmente existe las áreas de los registros, levantamiento de campo, escrituras, certificados de intersección, contratos. Se excluyó los proyectos en estado Liquidado, No construcción, Operación Comercial, Revocado. ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/ServiceEEPG/MapServer",
+                  "type": "esri-mapServer"
+                }, 
+                {
+                  "name": " E.E. Galápagos (Infraestructura eléctrica) ",
+                  "description": " CNEL - Guayaquil (Infraestructura Eléctrica) ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/ServiceGalapagos/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "CNEL BOLIVAR  (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION CNEL BOLIVAR ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.95.194.73:6080/arcgis/rest/services/CONELEC/ServiceBolivar/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "EEASA AMBATO CENTRO NORTE (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION EEASA",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.95.194.73:6080/arcgis/rest/services/CONELEC/ServiceEEASA/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Norte EMELNORTE (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION EEN",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.152.147.234/ArcGIS/rest/services/CONELEC/RedesEEN/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Quito (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION EEQ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://arcgis.eeq.com.ec/ArcGIS/rest/services/eeq/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Regional Centro Sur EERCS (Infraestructura eléctrica) ",
+                  "description": "Empresa Eléctrica Regional Centro Sur",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/RedesDist_EERCS/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Riobamba EERSA (Infraestructura eléctrica) ",
+                  "description": "Empresa Eléctrica Riobamba SA",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://gis.eersa.com.ec/ArcGIS/rest/services/arconel/arconelService/MapServer",
+                  "type": "esri-mapServer"
+                }
+              ]
+            },    
+            {
+              "name": "Demanda de Energía por Area de Concesión [ARCONEL]",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[     
+                {
+                  "name": "Demanda de Energía Eléctrica 2013 (GWh)",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/DemandaEnergiaElectricaAreaConcesion/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Demanda de Energía Eléctrica 2016 (GWh)",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/DemandaEnergiaElectricaAreaConcesion/MapServer/1",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Demanda de Energía Eléctrica 2020 (GWh)",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/DemandaEnergiaElectricaAreaConcesion/MapServer/2",
+                  "type": "esri-mapServer"
+                }
+              ]
+            },
+            {
+              "name": "Centrales Eléctricas",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[  
+                {
+                  "name": "Centrales Eléctricas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Hidráulicas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Térmicas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/1",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Biomasa",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/2",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Biogas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/3",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Eólica",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/4",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Solar",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/5",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Interconexión",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/6",
+                  "type": "esri-mapServer"
+                }
+              ]
+            },
+            {
+              "name": "Hidroeléctricas - Fase [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_energia/MapServer",
+              "type": "esri-mapServer",
+              "layers":"1"
+            },
+            {
+              "name": "Hidroeléctricas - Potencia (mw) [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_energia/MapServer",
+              "type": "esri-mapServer",
+              "layers":"0"
+            }
+            
           ]
         },
         {
@@ -463,6 +731,62 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "Modelo Digital del Terreno DTM [IGM]",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec)",
+              "url": "http://www.geoportaligm.gob.ec/dtm/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"igmdtm",
+              "type": "wms",
+              "description":"Modelo Digital del Terreno"
+            },
+            {
+              "name": "Mapa de Elevaciones 50k [IGM]",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec)",
+              "url": "http://www.geoportaligm.gob.ec/dtm/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"igm:elevacion50k",
+              "type": "wms"
+            },
+            {
+              "name": "Mapa de Sombras [IGM]",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec)",
+              "url": "http://www.geoportaligm.gob.ec/dtm/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"igm:sombras50k_t",
+              "type": "wms",
+              "description":"Mapa de Sombras"
+            },{
+              "name": "Curvas de Nivel 1:25k [IGM]",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/25k/wms",
+              "type": "wms",
+              "layers":"igm:curva_nivel_l"
+            },
+            {
+              "name": "Curvas de Nivel 1:50k [IGM]",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/50k/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"igm:curva_nivel_l"
+            },
+            {
+              "name": "Curvas de Nivel 1:250k [IGM]",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec:80/regional/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"igm:curva_nivel_l"
+            },
+            {
+              "name": "Curvas Batimétricas 1:50k [IGM]",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://www.geoportaligm.gob.ec/50k/ows?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"igm_reservada:curva_batimetrica_l"
+            }
+
+            
           ]
         },
         {
@@ -471,22 +795,147 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "CARTA PARA LÍMITES MARÍTIMOS DEL ECUADOR CONTINENTAL",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "https://tiles.arcgis.com/tiles/jqcbmuzMxQR7OuE2/arcgis/rest/services/CN_GEO_IOA43_1ED_25112013_tif/MapServer/",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "CARTA DIDÁCTICA DEL TERRITORIO MARÍTIMO DEL ECUADOR",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "https://tiles.arcgis.com/tiles/jqcbmuzMxQR7OuE2/arcgis/rest/services/TERRITORIO_MAR%C3%8DTIMO_NACIONAL_WTL1/MapServer?cacheKey=806bf37221743a72",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "SWAN - Modelo Simulación Oleaje [INOCAR]",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/swan_ecuador_galapagos.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"Hsig",
+              "type": "wms",
+              "colorScaleMaximum":4,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/rainbow"
+              },
+              "description":"SWAN (Simulating Waves Nearshore), es un modelo de propagación de oleaje espectral que simula la energía contenida en las ondas en su propagación desde superficies oceánicas hasta las zonas costeras, esta herramienta de simulación de olas costeras llega a una resolución espacial es de 0.01 grados, complementando así a más detalle el comportamiento de las olas en las áreas cercanas a la costa del Ecuador, su pronóstico es de hasta 5 días."
+            },
+            {
+              "name": "Salinidad [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/salinidad.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"salinidad",
+              "type": "wms",
+              "colorScaleMaximum":36,
+              "colorScaleMinimum":30,
+              "parameters": {
+                "colorscalerange": "30,36",
+                "elevation": "0"
+              }
+            },
+            {
+              "name": "Altura Significativa de la Ola [INOCAR]",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/ww3_hsig.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"hsig",
+              "type": "wms",
+              "colorScaleMaximum":3,
+              "colorScaleMinimum":0,
+              "parameters": {
+                "styles":"boxfill/rainbow"
+              },
+              "description":"SWAN (Simulating Waves Nearshore), es un modelo de propagación de oleaje espectral que simula la energía contenida en las ondas en su propagación desde superficies oceánicas hasta las zonas costeras, esta herramienta de simulación de olas costeras llega a una resolución espacial es de 0.01 grados, complementando así a más detalle el comportamiento de las olas en las áreas cercanas a la costa del Ecuador, su pronóstico es de hasta 5 días."
+            },
+            {
+              "name": "Temperatura [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/temperatura.nc?SERVICE=WMS&VERSION=1.1.1",
+              "layers":"temperatura",
+              "type": "wms",
+              "colorScaleMaximum":30,
+              "colorScaleMinimum":15,
+              "dimensions": {
+                "elevation": 0
+              },
+              "disableUserChanges":false,
+              "displayChoicesBeforeLegend":true
+            },
+            {
+              "name": "TDS Oficial INOCAR [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "ROMS OPERACIONAL - PERU [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/roms_his_forecast_2018-07-01.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "INOCAR Ecuador with Galápagos model [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/roms_his.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Campos medios diarios de Análisis y pronóstico de física oceánica global actualizados diariamente [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/global_analysis_forecast.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Campos medios horarios de Análisis y pronóstico de física oceánica global actualizados diariamente [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/global_analysis_forecast.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            }
+            
           ]
         },
         {
-          "name": "Imágenes Satelitales",
+          "name": "Fotografía Aérea / Imágenes Satelitales",
           "type": "group",
           "preserveOrder": true,
           "isOpen": false,
           "items":[
-          ]
-        },
-        {
-          "name": "Infraestructura",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
+            {
+              "name": "Ortofoto Nacional Ecuador [MAGAP]",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://181.112.137.164:8080/geoserver/nacional/wms?SERVICE=WMS&VERSION=1.3.0",
+              "layers":"orto_ecuador",
+              "type": "wms",
+              "opacity":1
+            },
+            {
+              "name": "Fotografías Aéreas [IGM]",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/orto/wms?service=wms&version=1.3.0",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Ortofotos Nivel Nacional [MAGAP]",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://181.112.137.164:8080/geoserver/nacional/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Ortofotos Nivel Cantonal [SIGTIERRAS]",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://ortofotos.sigtierras.gob.ec/geoserver/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            }
           ]
         },
         {
@@ -495,6 +944,720 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "Areas de conservación comunitaria [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:car_psb_beneficiario_comunitario",
+              "type": "wms"
+            },
+            {
+              "name": "Bioclima [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:bioclima",
+              "type": "wms"
+            },{
+              "name": "Biodiversidad Flora [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:biodiversidad_flora",
+              "type": "wms"
+            },
+            {
+              "name": "Bosques y Vegetación Protectora [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:car_bosques_protectores",
+              "type": "wms"
+            },
+            {
+              "name": "Cobertura y Uso de la Tierra 1990 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:cut_1990",
+              "type": "wms"
+            },
+            {
+              "name": "Cobertura y Uso de la Tierra 2000 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:cut_2000",
+              "type": "wms"
+            },
+            {
+              "name": "Cobertura y Uso de la Tierra 2008 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:cut_2008",
+              "type": "wms"
+            },
+            {
+              "name": "Cobertura y Uso de la Tierra 2014 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:cut_2014",
+              "type": "wms"
+            },
+            {
+              "name": "Cobertura y Uso de la Tierra 2016 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:cut_2016",
+              "type": "wms"
+            },
+            {
+              "name": "Condición Bosque Pasajes [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:condicion_bosque_pasajes",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Ambientales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_ambientales",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Áreas Protegidas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_areasprotegidas",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos con Gestión de Desechos Sólidos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_gestionintegraldesechossolidos",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Hidrocarburos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_hidrocarburos",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Minería [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_mineria",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Minería Estratégico [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_mineria_estrategico",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Otros [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_otros",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Reforestación [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_reforestacion",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Saneamiento Ambiental [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:conflictos_saneamiento_ambiental",
+              "type": "wms"
+            },
+            {
+              "name": "Corales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:corales",
+              "type": "wms"
+            },
+            {
+              "name": "Deforestación - Alertas Ambientales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"alertas_ambientales:deforestacion",
+              "type": "wms"
+            },
+            {
+              "name": "Deforestación - 1990/2000 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:deforestacion1990_2000",
+              "type": "wms"
+            },
+            {
+              "name": "Deforestación - 2000/2008 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:deforestacion2000_2008",
+              "type": "wms"
+            },
+            {
+              "name": "Deforestación - 2008/2014 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:deforestacion2008_2014",
+              "type": "wms"
+            },
+            {
+              "name": "Deforestación - 2014/2016 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:deforestacion2014_2016",
+              "type": "wms"
+            },
+            {
+              "name": "Deforestación Nacional- 2000/2008 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:deforestacion_nacional_2000_2008",
+              "type": "wms"
+            },
+            {
+              "name": "Derrames [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:derrames",
+              "type": "wms"
+            },
+            {
+              "name": "Derrames Petróleo Privado [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:derrames_petroleros_infopriv",
+              "type": "wms"
+            },
+            {
+              "name": "Derrames Petróleo Público [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:derrames_petroleros_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Disposición Final de Residuos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:disposicion_final_residuos",
+              "type": "wms"
+            },
+            {
+              "name": "Disposición Final de Residuos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:disposicion_residuos_mancomunidades",
+              "type": "wms"
+            },
+            {
+              "name": "Ecosistemas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:disposicion_residuos_mancomunidades",
+              "type": "wms"
+            },
+            {
+              "name": "Ecosistemas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:ecosistemas",
+              "type": "wms"
+            },
+            {
+              "name": "Ecosistemas del Ecuador Continental [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:ecosistemas_del_ecuador_continental",
+              "type": "wms"
+            },
+            {
+              "name": "Ecosistemas Frágiles [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:ecosistemas_fragiles",
+              "type": "wms"
+            },
+            {
+              "name": "Eco Talleres [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:ecotalleres_2",
+              "type": "wms"
+            },
+            {
+              "name": "Estudios Ambientales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:cuatro_categorias",
+              "type": "wms"
+            },
+            {
+              "name": "Empresas con Reconocimiento Ecuatoriano Ambiental (REA) – Punto Verde [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:empresas_punto_verde",
+              "type": "wms"
+            },
+            {
+              "name": "Esfuerzo Pesquero [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:esfuerzo_pesquero",
+              "type": "wms"
+            },
+            {
+              "name": "Estaciones Petroleras - Inf. Privada [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:estaciones_petroleras_infopriv",
+              "type": "wms"
+            },
+            {
+              "name": "Estaciones Petroleras - Inf. Pública [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:estaciones_petroleras_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Fenología [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:fenologia",
+              "type": "wms"
+            },
+            {
+              "name": "Fosas Petroleras - Inf. Privada [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:fosas_eliminadas_infopriv",
+              "type": "wms"
+            },
+            {
+              "name": "Fosas Petroleras - Inf. Pública [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:fosas_petroleras_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Fragmentación - Sistema Único de Informació Ambiental (SUIA) [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:fragm_suia1",
+              "type": "wms"
+            },
+            {
+              "name": "Geomorfología del Ecuador [MAGAP]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"vw_geoformas_ecuador",
+              "type": "wms"
+            },
+            {
+              "name": "Geopedología del Ecuador [MAGAP]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"vw_geopedologia_ecuador",
+              "type": "wms"
+            },
+            {
+              "name": "Humedales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:humedales",
+              "type": "wms"
+            },
+            {
+              "name": "Humedales Marino Costeros [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:humedales_marino_costeros",
+              "type": "wms"
+            },
+            {
+              "name": "Índice Ambiental [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"alertas_ambientales:indice_ambiental",
+              "type": "wms"
+            },
+            {
+              "name": "Índice Ambiental [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:indice_ombrotermico",
+              "type": "wms"
+            },
+            {
+              "name": "Índice de Termicidad [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:indice_termicidad",
+              "type": "wms"
+            },
+            {
+              "name": "Licenciamiento por Catálogo [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:licenciamiento_por_catalogo",
+              "type": "wms"
+            },
+            {
+              "name": "Mancomunidades [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:mancomunidades",
+              "type": "wms"
+            },
+            {
+              "name": "Manejo Forestal [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:manejo_forestal2",
+              "type": "wms"
+            },
+            {
+              "name": "Manglar Ecosistemas 2013 [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:manglar_ecosistemas_2013",
+              "type": "wms"
+            },
+            {
+              "name": "Monitoreo Registro Ambiental [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"alertas_ambientales:monitoreo_registro_ambiental",
+              "type": "wms"
+            },
+            {
+              "name": "Muestreo Calidad de Agua [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:muestreo_calidad_agua",
+              "type": "wms"
+            },
+            {
+              "name": "Muestreo Calidad de Aire [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:muestreo_calidad_aire",
+              "type": "wms"
+            },
+            {
+              "name": "Patromonio de Areas Naturales del Estado [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:car_pane",
+              "type": "wms"
+            },
+            {
+              "name": "Patromonio Forestal del Estado [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:patrimonio_forestal_estado",
+              "type": "wms"
+            },
+            {
+              "name": "Pisos Bio Climáticos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:pisos_bioclimaticos",
+              "type": "wms"
+            },
+            {
+              "name": "Playas Anidación [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:playas_anidacion",
+              "type": "wms"
+            },
+            {
+              "name": "Pueblos y Nacionalidades Tenencia [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:COMUNAS_ATLM",
+              "type": "wms"
+            },
+            {
+              "name": "Puertos Pesca [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:puertos_pesca",
+              "type": "wms"
+            },
+            {
+              "name": "RAMSAR -  Sistema Nacional de Areas Protegidas - Area [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:ramsar_area",
+              "type": "wms"
+            },
+            {
+              "name": "RAMSAR -  Sistema Nacional de Areas Protegidas - Punto [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:ramsar_punto",
+              "type": "wms"
+            },
+            {
+              "name": "Reciclaje [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:reciclar_final",
+              "type": "wms"
+            },
+            {
+              "name": "Regímenes de Inundación [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:regimenes_inundacion",
+              "type": "wms"
+            },
+            {
+              "name": "Registros Fragilidad [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:registros_fragilidad",
+              "type": "wms"
+            },
+            {
+              "name": "Reservas de Biósfera [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:reserva_biosfera",
+              "type": "wms"
+            },
+            {
+              "name": "Sector-Subsector Estudios [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:sector_subsector",
+              "type": "wms"
+            },
+            {
+              "name": "Siembratón [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:siembraton",
+              "type": "wms"
+            },
+            {
+              "name": "Sistema Nacional de Areas Protegidas SNAP [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:snap",
+              "type": "wms"
+            },
+            {
+              "name": "Suseptibilidad de Incendios [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:suceptibilidad_incendios",
+              "type": "wms"
+            },
+            {
+              "name": "Unidades Biogeográficas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:unidades_biogeograficas",
+              "type": "wms"
+            },
+            {
+              "name": "Unidades Geomorfológicas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:unidades_geomorfologicas",
+              "type": "wms"
+            },
+            {
+              "name": "V. Ecosistemas Conectividad [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:v_ecos_conectividad",
+              "type": "wms"
+            },
+            {
+              "name": "V. Ecosistemas Fragilidad [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:v_ecos_fragilidad",
+              "type": "wms"
+            },
+            {
+              "name": "V. Ecosistemas Fragmentación [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:v_ecos_fragmentacion",
+              "type": "wms"
+            },
+            {
+              "name": "V. Ecosistemas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:v_ecosistemas",
+              "type": "wms"
+            },
+            {
+              "name": "Vulnerabilidad [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:vulnerabilidad",
+              "type": "wms"
+            },
+            {
+              "name": "Vulnerabilidad Incendios [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:vulnerabilidad_incendios",
+              "type": "wms"
+            },
+            {
+              "name": "Vulnerabilidad Licencias [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:vulnerabilidad_licencias",
+              "type": "wms"
+            },
+            {
+              "name": "Vulnerabilidad Registros [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:vulnerabilidad_registros",
+              "type": "wms"
+            },
+            {
+              "name": "Zonas Intangibles [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"geosuia:car_zonas_intangibles",
+              "type": "wms"
+            },
+            {
+              "name": "Zonificación Alertas Ambientales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"alertas_ambientales:zonificacion_alertas_ambientales",
+              "type": "wms"
+            },
+            {
+              "name": "Areas Protegidas - [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_atlas_ecu/MapServer",
+              "type": "esri-mapServer",
+              "layers":"3"
+            },
+            {
+              "name": "Ecosistemas Nivel 1 [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_atlas_ecu/MapServer",
+              "type": "esri-mapServer",
+              "layers":"3"
+            }
+
+            
+            
           ]
         },
         {
@@ -503,6 +1666,268 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "Catastro Minero Nacional [ARCOM]",
+              "description": "AGENCIA DE REGULACIÓN Y CONTROL MINERO [ARCOM]",
+              "dataCustodian": "[ARCOM](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/rest/services/Gads/Concesiones_Produccion/MapServer",
+              "type": "esri-mapServer",
+              "layers":"1"
+            },
+            {
+              "name": "Catastro Minero [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:min_catastro",
+              "type": "wms"
+            },
+            {
+              "name": "Minería Plantas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:min_plantas",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Ambientales Minería [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_mineria",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Ambientales Minería Estratégico [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_mineria_estrategico",
+              "type": "wms"
+            }
+          ]
+        }, 
+        {
+          "name": "Petróleos e Hidrocarburos",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "EPP PETROECUADOR",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "Terminales de Almacenamiento de Derivados [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"eppetro:Terminales",
+                  "type": "wms"
+                },
+                {
+                  "name": "Oficinas Sucursal Comercial [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:oficinas_sucursal_comercial",
+                  "type": "wms"
+                },
+                {
+                  "name": "Depósitos de Derivados [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:depositos",
+                  "type": "wms"
+                },{
+                  "name": "Depósitos Gas Licuado de Petróleo GLP [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"eppetro:Depositos_de_GLP",
+                  "type": "wms"
+                },
+                {
+                  "name": "Plantas Envasadoras de Gas Licuado de Petróleo GLP [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:plantas_envasadoras_glp",
+                  "type": "wms"
+                },
+                {
+                  "name": "Estaciondes de captación de Gas [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:estaciones_gas_da",
+                  "type": "wms"
+                },
+                {
+                  "name": "Gasoductos Oriente [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:gasoductos_da",
+                  "type": "wms"
+                },
+                {
+                  "name": "Depósitos de Pesca Artesanal [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec:dep_pesca_artesanal",
+                  "type": "wms"
+                },{
+                  "name": "Edificios, Bodegas, Instalaciones [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:edificios_bodegas_instalaciones",
+                  "type": "wms"
+                },
+                {
+                  "name": "Estaciondes de Servicio [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:estaciones_servicio_eppec",
+                  "type": "wms"
+                },
+                {
+                  "name": "Planta GNL Bajo Alto [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:planta_gnl_bajo_alto",
+                  "type": "wms"
+                },
+                {
+                  "name": "Refinerías [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:refinerias",
+                  "type": "wms"
+                },
+                {
+                  "name": "Estciones - Sistema de Oleoducto Transecuatoriano (SOTE) [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:estaciones_sote",
+                  "type": "wms"
+                },
+                {
+                  "name": "Oleoducto Transecuatoriano (SOTE) [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:sote",
+                  "type": "wms"
+                },
+                {
+                  "name": "Boyas - Sistema de Oleoducto Transecuatoriano (SOTE) [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:monoboyas_sote",
+                  "type": "wms"
+                },
+                {
+                  "name": "Estaciones Poliductos [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:estaciones_poliductos",
+                  "type": "wms"
+                },
+                {
+                  "name": "Poliductos [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:poliductos",
+                  "type": "wms"
+                },
+                {
+                  "name": "Estaciones de Bombeo [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"eppetro:Estaciones_de_bombeo",
+                  "type": "wms"
+                },
+                {
+                  "name": "Zonas EPPEC [PETROECUADOR]",
+                  "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                  "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                  "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"sigeppec18:zonas_eppec",
+                  "type": "wms"
+                },
+              ]
+            },    
+            {
+              "name": "Bloques Petroleros [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:bloques_petroleros",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Ambientales Hidrocarburos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_hidrocarburos",
+              "type": "wms"
+            },
+            {
+              "name": "Derrames Petroleros [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:derrames_petroleros_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Fosas Petroleras [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:fosas_petroleras_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Plataformas Petroleras [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:plataformas_petroleras_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Pozos Petroleros [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:pozos_petroleros_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Centros Logísticos [MIN. HIDROCARBUROS]",
+              "description": "Ministerio de Hidrocarburos",
+              "dataCustodian": "http://mhgeoportal.hidrocarburos.gob.ec/",
+              "url": "http://mhgeoportal.hidrocarburos.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"ctr_log_upc:centro_logistico_mh",
+              "type": "wms"
+            }
           ]
         }, 
         {
@@ -593,46 +2018,89 @@
           "items":[
             {
               "name": "Mapa Base Ecuador",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
               "url": "http://www.geoportaligm.gob.ec/geoserver/mapabase/wms?service=wms&version=1.3.0",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Fotografías Aéreas",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
               "url": "http://www.geoportaligm.gob.ec/orto/wms?service=wms&version=1.3.0",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Modelo Digital de Terreno",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
               "url": "http://www.geoportaligm.gob.ec/dtm/wms",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "Galápagos",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "name": "Galápagos 25k",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
               "url": "http://www.geoportaligm.gob.ec/galapagos25/wms",
               "type": "wms-getCapabilities"
             },
             {
+              "name": "Información Escala 1:5k",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/5k/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
               "name": "Información Escala 1:25k",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
               "url": "http://www.geoportaligm.gob.ec/25k/wms",
               "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:50k",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/50k/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:250k - Regional",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/regional/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:1'000.000 - Nacional",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/nacional/wms?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Binacional Ecuador-Colombia Servicio WMS",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/binacional/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información del Instituto Geográfico Militar",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/geoserver/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
             }
+            
           ]
           
         },
         {
           "name": "Ministerio del Ambiente",
-          "description": "[Licence](http://www.ga.gov.au/copyright)",
-          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "description": "Ministerio del Ambiente [MAE]",
+          "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
           "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
           "type": "wms-getCapabilities"
         },
@@ -658,8 +2126,8 @@
           "items":[
             {
               "name": "Ortofoto Nacional Ecuador",
-              "description": "[Licence](http://www.serviciometeorologico.gob.ec/)",
-              "dataCustodian": "[INAMHI](http://www.serviciometeorologico.gob.ec//)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://181.112.137.164:8080/geoserver/nacional/wms?SERVICE=WMS&VERSION=1.3.0",
               "layers":"orto_ecuador",
               "type": "wms",
@@ -667,92 +2135,92 @@
             },
             {
               "name": "Cobertura y Uso de la Tierra",  // http://geoportal.sigtierras.gob.ec:8080/GeoserverViewer/
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Estimaciones de Cultivos",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/cobertura/E25k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Industrias y servicios del agro",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/infraestructura/E50k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Registros Administrativos Agropecuarios",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/registros/E5k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Redes Comerciales",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/tematicas/E50k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Zonificaciones Agroecológicas y Zonificaciones Agroecológicas Económicas",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/demarcacion/E250k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Accesibilidad - Geomorfología - Geopedología",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Estudios Agropecuarios Derivados",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/tematicas/E25k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Programas e Incentivos",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/cobertura/E5k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Catastro Rural",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://181.112.137.169:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Inventario de Mapas Históricos",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://geoportal.agricultura.gob.ec/tematicas/E250k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Ortofotos Nivel Nacional",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://181.112.137.164:8080/geoserver/nacional/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
               "name": "Ortofotos Nivel Cantonal",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
               "url": "http://ortofotos.sigtierras.gob.ec/geoserver/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             }
@@ -1044,46 +2512,300 @@
 
         },
         {
-          //http://geoportal.regulacionelectrica.gob.ec/visor/index.html 
-          "name": "Sector Eléctrico",
+          "name": "Empresa Eléctrica Pública [CNELEP]",
           "type": "group",
           "preserveOrder": true,
           "isOpen": false,
           "items":[
             {
+              "name": "REP/CNELEPTecnico",
+              "description": "Empresa Eléctrica Pública [CNELEP]",
+              "url": "https://geoportal.cnelep.gob.ec/arcgis/rest/services/REP/CNELEPTecnico/MapServer",
+              "type": "esri-mapServer"
+            }
+          ]
+        },  
+        {
+          
+          "name": "Agencia de Regulación y Control de Electricidad [ARCONEL]",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[   
+            {
               "name": "Generadoras Eléctricas",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "description": "[Licence](https://www.regulacionelectrica.gob.ec/) | http://geoportal.regulacionelectrica.gob.ec/visor/index.html ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
               "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/estaprueba/MapServer/0",
-              "type": "esri-mapServer",
-              "properties": "\"drawingInfo\":{\"renderer\": {\"type\":\"simple\", \"symbol\": {\"type\":\"esriSFS\",\"style\":\"esriSFSSolid\",\"color\":[255,0,0,255],\"outline\":{\"type\":\"esriSLS\",\"style\":\"esriSLSSolid\",\"color\":[0,255,0,255],\"width\":1}}}}}]&gdbVersion=&f=html"
+              "type": "esri-mapServer"
             },
             {
-              "name": "Empresa Eléctrica Regional Centrosur",
+              "name": "Líneas de Transmisión",
+              "description": "Líneas de transmisión y subtransmisión a nivel nacional ",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Lineas/MapServer",
+              "type": "esri-mapServer"
+            },     
+            {
+              "name": "Paneles Solares",
+              "description": "Paneles solares de la E.E. Centro Sur y CNEL- Sucumbíos ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/PanelesSolares/MapServer",
+              "type": "esri-mapServer"
+            }, 
+            {
+              "name": "Proyectos Eléctricos",
+              "description": "Proyectos de generación hidroeléctricos, térmicos, eólicos, geotérmicos. Adicionalmente existe las áreas de los registros, levantamiento de campo, escrituras, certificados de intersección, contratos. Se excluyó los proyectos en estado Liquidado, No construcción, Operación Comercial, Revocado. ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/proyectos1/MapServer",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Subestaciones",
+              "description": "Subestaciones de transmisión, generación, distribución a nivel nacional ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Subestaciones/MapServer",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Tipos de Clima (Holdrige)",
+              "description": "Tipos de Clima según Holdrige a nivel nacional. Escala 1:250.000",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/TiposClimaHoldrige/MapServer",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Cobertura Vegetal (Sierra)",
+              "description": "Cobertura vegetal a nivel nacional a escala 1:50.000 ",
+              "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+              "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/CoberturaVegetalSierra/MapServer",
+              "type": "esri-mapServer"
+            },     
+            {
+              "name": "Infraestructura Eléctrica",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[ 
+                {
+                  "name": "CNEL - Guayaquil (Infraestructura Eléctrica) ",
+                  "description": "Proyectos de generación hidroeléctricos, térmicos, eólicos, geotérmicos. Adicionalmente existe las áreas de los registros, levantamiento de campo, escrituras, certificados de intersección, contratos. Se excluyó los proyectos en estado Liquidado, No construcción, Operación Comercial, Revocado. ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/ServiceEEPG/MapServer",
+                  "type": "esri-mapServer"
+                }, 
+                {
+                  "name": " E.E. Galápagos (Infraestructura eléctrica) ",
+                  "description": " CNEL - Guayaquil (Infraestructura Eléctrica) ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/ServiceGalapagos/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "CNEL BOLIVAR  (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION CNEL BOLIVAR ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.95.194.73:6080/arcgis/rest/services/CONELEC/ServiceBolivar/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "EEASA AMBATO CENTRO NORTE (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION EEASA",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.95.194.73:6080/arcgis/rest/services/CONELEC/ServiceEEASA/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Norte EMELNORTE (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION EEN",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.152.147.234/ArcGIS/rest/services/CONELEC/RedesEEN/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Quito (Infraestructura eléctrica) ",
+                  "description": "REDES DE DISTRIBUCION EEQ",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://arcgis.eeq.com.ec/ArcGIS/rest/services/eeq/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Regional Centro Sur EERCS (Infraestructura eléctrica) ",
+                  "description": "Empresa Eléctrica Regional Centro Sur",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/RedesDist_EERCS/MapServer",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Empresa Eléctrica Riobamba EERSA (Infraestructura eléctrica) ",
+                  "description": "Empresa Eléctrica Riobamba SA",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://gis.eersa.com.ec/ArcGIS/rest/services/arconel/arconelService/MapServer",
+                  "type": "esri-mapServer"
+                }
+              ]
+            },    
+            {
+              "name": "Demanda de Energía por Area de Concesión [ARCONEL]",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[     
+                {
+                  "name": "Demanda de Energía Eléctrica 2013 (GWh)",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/DemandaEnergiaElectricaAreaConcesion/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Demanda de Energía Eléctrica 2016 (GWh)",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/DemandaEnergiaElectricaAreaConcesion/MapServer/1",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Demanda de Energía Eléctrica 2020 (GWh)",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/DemandaEnergiaElectricaAreaConcesion/MapServer/2",
+                  "type": "esri-mapServer"
+                }
+              ]
+            },
+            {
+              "name": "Centrales Eléctricas",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[  
+                {
+                  "name": "Centrales Eléctricas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Hidráulicas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Térmicas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/1",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Biomasa",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/2",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Biogas",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/3",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Eólica",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/4",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Solar",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/5",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Interconexión",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/Centrales1/MapServer/6",
+                  "type": "esri-mapServer"
+                }
+              ]
+            },
+            {
+              "name": "Atlas Solar",
               "type": "group",
               "preserveOrder": true,
               "isOpen": false,
               "items":[
                 {
-                  "name": "Red de Distribución",
-                  "description": "[Licence](http://www.ga.gov.au/copyright)",
-                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-                  "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/RedesDist_EERCS/MapServer",
-                  "type": "esri-mapServer-group"
+                  "id":"123",
+                  "name": "Insolación Global",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/AtlasSolar/MapServer/",
+                  "legendUrl":"http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/AtlasSolar/MapServer/legend",
+                  "type": "esri-mapServer",
+                  "clipToRectangle":"false",
+                  "zoomOnEnable": "true",
+                  "layers":"0"
                 },
                 {
-                  "name": "Cartografía Base",
-                  "description": "[Licence](http://www.ga.gov.au/copyright)",
-                  "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-                  "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/Cartografia_EERCS/MapServer",
-                  "type": "esri-mapServer-group"
-                }
-                 
-                ]
-              }    
-            
+                  "name": "Insolación Directa",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/AtlasSolar/MapServer/",
+                  "type": "esri-mapServer",
+                  "clipToRectangle":"false",
+                  "zoomOnEnable": "true",
+                  "cacheDuration":"1s",
+                  "layers":"3"
+                },
+                {
+                  "name": "Insolación Difusa",
+                  "description": "[Licence](https://www.regulacionelectrica.gob.ec/)",
+                  "dataCustodian": "[Agencia de Regulación y Control de Electricidad](https://www.regulacionelectrica.gob.ec/)",
+                  "url": "http://190.11.14.53:6080/arcgis/rest/services/publicogeoportal/AtlasSolar/MapServer/",
+                  "type": "esri-mapServer",
+                  "clipToRectangle":"false",
+                  "zoomOnEnable": "true",
+                  "cacheDuration":"1s",
+                  "layers":"6"
+                }       
+                
+              ]
+            }
             
           ]
+        },
+        {
+          "name": "Empresa Eléctrica Regional Centrosur",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Red de Distribución",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/RedesDist_EERCS/MapServer",
+              "type": "esri-mapServer-group"
+            },
+            {
+              "name": "Cartografía Base",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/Cartografia_EERCS/MapServer",
+              "type": "esri-mapServer-group"
+            }
+             
+            ]
         },    
         {
           "name": "Instituto Oceanográfico (INOCAR)",
@@ -1092,7 +2814,7 @@
           "isOpen": false,
           "items":[
             {
-              "name": "SWAN - Modelo Simulación Oleaje",
+              "name": "SWAN - Modelo Simulación Oleaje [INOCAR]",
               "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
               "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/swan_ecuador_galapagos.nc?service=WMS&version=1.3.0&request=GetCapabilities",
               "layers":"Hsig",
@@ -1105,7 +2827,7 @@
               "description":"SWAN (Simulating Waves Nearshore), es un modelo de propagación de oleaje espectral que simula la energía contenida en las ondas en su propagación desde superficies oceánicas hasta las zonas costeras, esta herramienta de simulación de olas costeras llega a una resolución espacial es de 0.01 grados, complementando así a más detalle el comportamiento de las olas en las áreas cercanas a la costa del Ecuador, su pronóstico es de hasta 5 días."
             },
             {
-              "name": "Salinidad",
+              "name": "Salinidad [INOCAR]",
               "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
               "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
               "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/salinidad.nc?service=WMS&version=1.3.0&request=GetCapabilities",
@@ -1119,20 +2841,20 @@
               }
             },
             {
-              "name": "Temperatura del Aire a 2m",
-              "description": "WRF (Weather Research and Forecasting), este modelo es un sistema de predicción numérica de mesoescala para simulación atmosférica, diseñado tanto para la investigación atmosférica como para las necesidades operacionales de predicción. Cuenta con dos núcleos dinámicos, un sistema de asimilación de datos y una arquitectura de software que facilita la computación paralela y la extensibilidad del sistema. El modelo sirve a una amplia gama de aplicaciones meteorológicas a través de escalas de resolución de 5 kilómetros, su pronóstico es de hasta 3 días.",
+              "name": "Altura Significativa de la Ola [INOCAR]",
               "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
-              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1  ",
-              "layers":"T_2m",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/ww3_hsig.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "layers":"hsig",
               "type": "wms",
-              "colorScaleMaximum":35,
+              "colorScaleMaximum":3,
               "colorScaleMinimum":0,
               "parameters": {
                 "styles":"boxfill/rainbow"
-              }
+              },
+              "description":"SWAN (Simulating Waves Nearshore), es un modelo de propagación de oleaje espectral que simula la energía contenida en las ondas en su propagación desde superficies oceánicas hasta las zonas costeras, esta herramienta de simulación de olas costeras llega a una resolución espacial es de 0.01 grados, complementando así a más detalle el comportamiento de las olas en las áreas cercanas a la costa del Ecuador, su pronóstico es de hasta 5 días."
             },
             {
-              "name": "Temperatura",
+              "name": "Temperatura [INOCAR]",
               "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
               "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
               "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/temperatura.nc?SERVICE=WMS&VERSION=1.1.1",
@@ -1147,17 +2869,38 @@
               "displayChoicesBeforeLegend":true
             },
             {
-              "name": "Monitoreo Oceánico",
+              "name": "TDS Oficial INOCAR [INOCAR]",
               "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
               "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
-              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/wrf.nc?service=WMS&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "TDS Oficial INOCAR",
+              "name": "ROMS OPERACIONAL - PERU [INOCAR]",
               "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
               "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
-              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/roms_his.nc?service=WMS&version=1.3.0&request=GetCapabilities&SERVICE=WMS",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/roms_his_forecast_2018-07-01.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "INOCAR Ecuador with Galápagos model [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/roms_his.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Campos medios diarios de Análisis y pronóstico de física oceánica global actualizados diariamente [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/global_analysis_forecast.nc?service=WMS&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Campos medios horarios de Análisis y pronóstico de física oceánica global actualizados diariamente [INOCAR]",
+              "description": "[Licence](https://www.inocar.mil.ec/web/index.php/productos/monitoreo-oceanico)",
+              "dataCustodian": "[INOCAR](https://www.inocar.mil.ec/)",
+              "url": "http://coos.inocar.mil.ec:8080/thredds/wms/testAll/actual/global_analysis_forecast.nc?service=WMS&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             }
            
@@ -1207,13 +2950,6 @@
           "description": "[Licence](http://www.ga.gov.au/copyright)",
           "dataCustodian": "[INEC](http://www.ga.gov.au/)",
           "url": "https://www.codigopostal.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-          "type": "wms-getCapabilities"
-        },
-        {
-          "name": "Ecociencia",
-          "description": "[Licence](http://ecociencia.org/)",
-          "dataCustodian": "[ECOCIENCIA](http://ecociencia.org/)",
-          "url": "http://ecociencia.org/",
           "type": "wms-getCapabilities"
         },
         {
@@ -1427,6 +3163,98 @@
       "preserveOrder": true,
       "isOpen": true,
       "items": [
+        {
+          "name": "RAISG - Red Amazónica de Información Socioambiental Georeferenciada",
+          "preserveOrder": true,
+          "isOpen": false,
+          "type": "group",
+          "items":[
+            {
+                "name": "Areas Protegidas [RAISG]",
+                "description": "[Licence](https://geo.socioambiental.org/)",
+                "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+                "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_anps/MapServer",
+                "type": "esri-mapServer"
+            },
+            {
+              "name": "Límite Bio-Geográfico [RAISG]",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_atlas_ecu/MapServer",
+              "type": "esri-mapServer",
+              "layers":"0"
+            },
+            {
+              "name": "Límite Región Amázonica Ecuatoriana (RAE) [RAISG]",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_atlas_ecu/MapServer",
+              "type": "esri-mapServer",
+              "layers":"1"
+            },
+            {
+              "name": "Bloques Petroleros [RAISG]",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_atlas_ecu/MapServer",
+              "type": "esri-mapServer",
+              "layers":"3"
+            },
+            {
+              "name": "Areas Protegidas - [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_atlas_ecu/MapServer",
+              "type": "esri-mapServer",
+              "layers":"3"
+            },
+            {
+              "name": "Ecosistemas Nivel 1 [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_atlas_ecu/MapServer",
+              "type": "esri-mapServer",
+              "layers":"3"
+            },
+            {
+              "name": "Hidroeléctricas - Fase [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_energia/MapServer",
+              "type": "esri-mapServer",
+              "layers":"1"
+            },
+            {
+              "name": "Hidroeléctricas - Potencia (mw) [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_energia/MapServer",
+              "type": "esri-mapServer",
+              "layers":"0"
+            },
+            {
+              "name": "Explotación Petróleo [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_petroleo/MapServer",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Carreteras [RAISG] ",
+              "description": "[Licence](https://geo.socioambiental.org/)",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_vias/MapServer",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Territorios de Pueblos y NAcionalidades Indígenas [RAISG] ",
+              "description": "Mapa de los Territorios Indígenas, en el ambito de la red Amazónica de Información Socioambiental Georreferenciada para la Amazónia",
+              "dataCustodian": "[RAISG](https://geo.socioambiental.org/)",
+              "url": "https://geo.socioambiental.org/webadaptor2/rest/services/raisg/raisg_vias/MapServer",
+              "type": "esri-mapServer"
+            }
+          ]
+        },
         {
           "name": "NASA Global Imagery Browse Services for EOSDIS",
           "description": "[Licence](NASA)",
