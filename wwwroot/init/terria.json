@@ -29,6 +29,17 @@
                   "scale": 2,
                   "scaleByValue": true
               }
+            },
+            {
+              "name": "Extensómetros",
+              "type": "csv",
+              "url": "http://localhost:8600/geoserver/celec/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=celec%3Aeb102_v_extensometros_mes&maxFeatures=500000000&outputFormat=csv",
+              "tableStyle": {
+                  "colorMap": "white-orange-red",
+                  "idColumns": ["est_id"],
+                  "scale": 2,
+                  "scaleByValue": true
+              }
             }
           ]
         },    
@@ -47,7 +58,23 @@
               "description":"Minas ilegales en parroquia La Merced de Buenos Aires, ubicada en el cantón Urcuquí, provincia de Imbabura.",
               "zoomOnEnable":true,
               "opacity":1
-            }
+            },
+            {
+              "name": "Incendios últimas 24 horas - Global_MODIS [WRI]",
+              "description": "https://www.wri.org/",
+              "dataCustodian": "https://www.wri.org/",
+              "url": "https://gis-gfw.wri.org/arcgis/rest/services/Fires/FIRMS_Global_MODIS_24hrs/MapServer",
+              "type": "esri-mapServer",
+              "opacity":1
+            },
+            {
+              "name": "Incendios últimos 7 días - Global_MODIS [WRI]",
+              "description": "https://www.wri.org/",
+              "dataCustodian": "https://www.wri.org/",
+              "url": "https://gis-gfw.wri.org/arcgis/rest/services/Fires/FIRMS_Global_MODIS_7d/MapServer",
+              "type": "esri-mapServer",
+              "opacity":1
+            },
             
             
           ]
@@ -1944,6 +1971,347 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "Incendios últimas 24 horas - Global_MODIS [WRI]",
+              "description": "https://www.wri.org/",
+              "dataCustodian": "https://www.wri.org/",
+              "url": "https://gis-gfw.wri.org/arcgis/rest/services/Fires/FIRMS_Global_MODIS_24hrs/MapServer",
+              "type": "esri-mapServer",
+              "opacity":1
+            },
+            {
+              "name": "Incendios últimos 7 días - Global_MODIS [WRI]",
+              "description": "https://www.wri.org/",
+              "dataCustodian": "https://www.wri.org/",
+              "url": "https://gis-gfw.wri.org/arcgis/rest/services/Fires/FIRMS_Global_MODIS_7d/MapServer",
+              "type": "esri-mapServer",
+              "opacity":1
+            },
+            {
+              "name": "Amenaza Tsunami [PETROECUADOR]",
+              "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+              "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"sigeppec:tsunami",
+              "type": "wms"
+            },
+            {
+              "name": "Fallas Geológicas [PETROECUADOR]",
+              "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+              "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"sigeppec:fallas_2008_ig",
+              "type": "wms"
+            },
+            {
+              "name": "Movilidad Humana [SGR]",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/MovilidadHumana/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "COEs Activos - Comietes de Operación de Emergencias [SGR]",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "COE Parroquial Activo [SGR]",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/1",
+                  "type": "esri-featureServer"
+                },
+                {
+                  "name": "COE Cantonal Activo [SGR]",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/0",
+                  "type": "esri-featureServer"
+                },
+                {
+                  "name": "COE Provincial Activo [SGR]",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/2",
+                  "type": "esri-featureServer"
+                }
+              ]
+            },    
+            {
+              "name": "Pronóstico de Deslizamientos [SGR]",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/pronostico/FeatureServer",
+              "type": "esri-featureServer-group"
+            },
+            {
+              "name": "Eje Vial con Amenazas [SGR]",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/eje_vial/FeatureServer",
+              "type": "esri-featureServer-group"
+            },
+            {
+              "name":"Volcánes",
+              "type":"group",
+              "items":[
+                    {
+                      "name": "Peligro Volcánico [PETROECUADOR]",
+                      "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+                      "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+                      "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                      "layers":"sigeppec:peligro_volcanico",
+                      "type": "wms"
+                    },
+                    {
+                      "name": "Volcanes Mundo [SGR]",
+                      "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                      "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                      "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/mundo_volcanes/FeatureServer/0",
+                      "type": "esri-featureServer"
+                    },
+                    {
+                      "name": "Actividad Volcánica [SGR]",
+                      "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                      "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                      "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/Actividad_Volc%C3%A1nica/FeatureServer/0",
+                      "type": "esri-featureServer"
+                    },
+                    {
+                      "name": "Volcanes Clasificación por Estado de Actividad [IGE]",
+                      "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Volcanes/MapServer/0",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Desplazamiento GPS - Volcanes el Ecuador [IGE]",
+                      "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/GPS_V/MapServer/0",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Volcánes [IGE]",
+                      "type": "group",
+                      "preserveOrder": true,
+                      "isOpen": false,
+                      "items":[
+                        {
+                          "name": "Antisana [IGE]",
+                          "type": "group",
+                          "preserveOrder": true,
+                          "isOpen": false,
+                          "items":[
+                            {
+                              "name": "Antisana Sismos [IGE]",
+                              "description": "Se presenta la sismicidad registrada los últimos 180 días, asociados al volcán Antisana ",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Antisana_sismos/MapServer/0",
+                              "type": "esri-mapServer",
+                              "opacity":1
+                             }
+                            
+                          ]  
+                        },
+                        {
+                          "name": "Cayambe [IGE]",
+                          "type": "group",
+                          "preserveOrder": true,
+                          "isOpen": false,
+                          "items":[
+                            {
+                              "name": "Cayambe Amenaza [IGE]",
+                              "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal ",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Amenaza/MapServer/0",
+                              "type": "esri-mapServer"
+                            },
+                            {
+                              "name": "Cayambe Cenzia [IGE]",
+                              "description": "Portencial caída de piroclástos (ceniza) asociada al volcán Cayambe con un escenario como el de San Marcos y un VEI entre 3 a 4",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Ceniza/MapServer/0",
+                              "type": "esri-mapServer"
+                            },
+                            {
+                              "name": "Cayambe Sector [IGE]",
+                              "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sector/MapServer/1",
+                              "type": "esri-mapServer"
+                            },
+                            {
+                              "name": "Cayambe Sismos [IGE]",
+                              "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sismos/MapServer/0",
+                              "type": "esri-mapServer"
+                            }
+                          ]  
+                        },
+                        {
+                          "name": "Cerro Negro [IGE]",
+                          "type": "group",
+                          "preserveOrder": true,
+                          "isOpen": false,
+                          "items":[
+                            {
+                              "name": "Cerro Negro Amenaza [IGE]",
+                              "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Amenaza/MapServer/0",
+                              "type": "esri-mapServer"
+                            },
+                            {
+                              "name": "Cerro Negro Balístico [IGE]",
+                              "description": "Peligro volcánico asociado por caída de proyectiles balísticos al complejo volcánico Chiles - Cerro Negro",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Balistico/MapServer/0",
+                              "type": "esri-mapServer"
+                            },
+                            {
+                              "name": "Cerro Negro Piroclastos [IGE]",
+                              "description": "Caidas de ceniza asociado al complejo volcánico Chiles - Cerro Negro ",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_piroclastos/MapServer/0",
+                              "type": "esri-mapServer"
+                            },
+                            {
+                              "name": "Cerro Negro Sismos [IGE]",
+                              "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_sismos/MapServer/0",
+                              "type": "esri-mapServer",
+                              "opacity":1
+                            },
+                            {
+                              "name": "Cerro Negro Población [IGE]",
+                              "description": "Población en la zona de influencia del complejo volcánico Chiles - Cerro Negro. Datos a nivel de cantón, zona amanzanada y sector ",
+                              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_poblacion/MapServer",
+                              "type": "esri-mapServer-group"
+                            }
+                          ]  
+                        }
+                      ]
+                    }
+              ]
+            },
+            {
+              "name": "Derrames Petroleros [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:derrames_petroleros_infopublic",
+              "type": "wms"
+            },
+            {
+              "name": "Régimenes de Inundación [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:regimenes_inundacion",
+              "type": "wms"
+            },
+            {
+              "name": "Suseptibilidad de Inundaciones [PETROECUADOR]",
+              "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+              "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"sigeppec18:sgr_susceptibilidad_inundaciones",
+              "type": "wms"
+            },
+            {
+              "name": "Suseptibilidad de Incendios [PETROECUADOR]",
+              "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+              "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"sigeppec18:sgr_susceptibilidad_incendios",
+              "type": "wms"
+            },
+            {
+              "name": "Suseptibilidad de Incendios [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:suceptibilidad_incendios",
+              "type": "wms"
+            },
+            {
+              "name": "Vulnerabilidad de Incendios [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:vulnerabilidad_licencias",
+              "type": "wms"
+            },
+            {
+              "name": "Vulnerabilidad Licencias Ambientales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:vulnerabilidad_licencias",
+              "type": "wms"
+            },
+            {
+              "name": "Vulnerabilidad Registros Ambientales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:vulnerabilidad_registros",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Ambientales [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_ambientales",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Areas Protegidas [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_areasprotegidas",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos con Gestión de Desechos Sólidos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_gestionintegraldesechossolidos",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Hidrocarburos [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_hidrocarburos",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Minería [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_mineria",
+              "type": "wms"
+            },
+            {
+              "name": "Conflictos Sanemiento Ambiental [MAE]",
+              "description": "Ministerio del Ambiente [MAE]",
+              "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+              "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+              "layers":"geosuia:conflictos_saneamiento_ambiental",
+              "type": "wms"
+            }
           ]
         }, 
         {
@@ -1952,18 +2320,34 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "Accesibilidad a Infraestructura de Salud [MAGAP]",  
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"acc_salud_reclas"
+            },
+            {
+              "name": "Unidades de Salud [MAGAP]",  
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"acc_salud_mas_destino"
+            },
+            {
+              "name": "Centros de Salud del Ecuador[MAGAP]",  
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"centros_salud"
+            },
           ]
         },
         {
           "name": "Social y Económico",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-          ]
-        },
-        {
-          "name": "Suelo y Terreno",
           "type": "group",
           "preserveOrder": true,
           "isOpen": false,
@@ -1976,22 +2360,54 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
-          ]
-        },
-        {
-          "name": "Varios",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-          ]
-        },
-        {
-          "name": "Vegetación",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
+            {
+              "name": "Vías 1:5k [IGM]",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/5k/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"igm:via_l"
+            },
+            {
+              "name": "Vías 1:50k [IGM]",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/50k/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"igm:via_l"
+            },
+            {
+              "name": "Vías Nacional 1:1'000.000 [IGM]",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/nacional/wms?SERVICE=WMS&",
+              "type": "wms",
+              "layers":"igm:vias"
+            },
+            {
+              "name": "Accesibilidad Vías de Primero Orden [MAGAP]",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"acc_vias_reclas"
+            },
+            {
+              "name": "Red vial generada en el proyecto [SIGTIERRAS]",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"red_viaria_de_primer_orden"
+            },
+            {
+              "name": "Vías Asfaltadas [MAGAP]",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms",
+              "layers":"vias_acc"
+            },
           ]
         },
         {
@@ -2000,6 +2416,148 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+
+            {
+              "name": "Peligro Volcánico [PETROECUADOR]",
+              "description": "EMPRESA PUBLICA PETROECUADOR [PETROECUADOR]",
+              "dataCustodian": "[PETROECUADOR](https://www.eppetroecuador.ec/)",
+              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"sigeppec:peligro_volcanico",
+              "type": "wms"
+            },
+            {
+              "name": "Volcanes Mundo [SGR]",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/mundo_volcanes/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Actividad Volcánica [SGR]",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/Actividad_Volc%C3%A1nica/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Volcanes Clasificación por Estado de Actividad [IGE]",
+              "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Volcanes/MapServer/0",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Desplazamiento GPS - Volcanes el Ecuador [IGE]",
+              "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+              "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+              "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/GPS_V/MapServer/0",
+              "type": "esri-mapServer"
+            },
+            {
+              "name": "Volcánes [IGE]",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "Antisana [IGE]",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "isOpen": false,
+                  "items":[
+                    {
+                      "name": "Antisana Sismos [IGE]",
+                      "description": "Se presenta la sismicidad registrada los últimos 180 días, asociados al volcán Antisana ",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Antisana_sismos/MapServer/0",
+                      "type": "esri-mapServer",
+                      "opacity":1
+                     }
+                    
+                  ]  
+                },
+                {
+                  "name": "Cayambe [IGE]",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "isOpen": false,
+                  "items":[
+                    {
+                      "name": "Cayambe Amenaza [IGE]",
+                      "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal ",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Amenaza/MapServer/0",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Cayambe Cenzia [IGE]",
+                      "description": "Portencial caída de piroclástos (ceniza) asociada al volcán Cayambe con un escenario como el de San Marcos y un VEI entre 3 a 4",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Ceniza/MapServer/0",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Cayambe Sector [IGE]",
+                      "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sector/MapServer/1",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Cayambe Sismos [IGE]",
+                      "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sismos/MapServer/0",
+                      "type": "esri-mapServer"
+                    }
+                  ]  
+                },
+                {
+                  "name": "Cerro Negro [IGE]",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "isOpen": false,
+                  "items":[
+                    {
+                      "name": "Cerro Negro Amenaza [IGE]",
+                      "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Amenaza/MapServer/0",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Cerro Negro Balístico [IGE]",
+                      "description": "Peligro volcánico asociado por caída de proyectiles balísticos al complejo volcánico Chiles - Cerro Negro",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Balistico/MapServer/0",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Cerro Negro Piroclastos [IGE]",
+                      "description": "Caidas de ceniza asociado al complejo volcánico Chiles - Cerro Negro ",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_piroclastos/MapServer/0",
+                      "type": "esri-mapServer"
+                    },
+                    {
+                      "name": "Cerro Negro Sismos [IGE]",
+                      "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_sismos/MapServer/0",
+                      "type": "esri-mapServer",
+                      "opacity":1
+                    },
+                    {
+                      "name": "Cerro Negro Población [IGE]",
+                      "description": "Población en la zona de influencia del complejo volcánico Chiles - Cerro Negro. Datos a nivel de cantón, zona amanzanada y sector ",
+                      "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                      "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_poblacion/MapServer",
+                      "type": "esri-mapServer-group"
+                    }
+                  ]  
+                }
+              ]
+            }
           ]
         }     
       ]
@@ -2010,521 +2568,6 @@
       "preserveOrder": true,
       "isOpen": true,
       "items": [
-        {
-          "name": "IGM",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "Mapa Base Ecuador",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec/geoserver/mapabase/wms?service=wms&version=1.3.0",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Fotografías Aéreas",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec/orto/wms?service=wms&version=1.3.0",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Modelo Digital de Terreno",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec/dtm/wms",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Galápagos 25k",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec/galapagos25/wms",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Información Escala 1:5k",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec:80/5k/ows?SERVICE=WMS&",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Información Escala 1:25k",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec/25k/wms",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Información Escala 1:50k",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec/50k/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Información Escala 1:250k - Regional",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec:80/regional/ows?SERVICE=WMS&",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Información Escala 1:1'000.000 - Nacional",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec:80/nacional/wms?SERVICE=WMS&",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Información Binacional Ecuador-Colombia Servicio WMS",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec:80/binacional/ows?SERVICE=WMS&",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Información del Instituto Geográfico Militar",
-              "description": "Instituto Geográfico Militar",
-              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
-              "url": "http://www.geoportaligm.gob.ec:80/geoserver/ows?SERVICE=WMS&",
-              "type": "wms-getCapabilities"
-            }
-            
-          ]
-          
-        },
-        {
-          "name": "Ministerio del Ambiente",
-          "description": "Ministerio del Ambiente [MAE]",
-          "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
-          "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
-          "type": "wms-getCapabilities"
-        },
-        {
-          "name": "Ministerio de Educación",
-          "description": "[Licence](http://www.ga.gov.au/copyright)",
-          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-          "url": "http://geoportal.educacion.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-          "type": "wms-getCapabilities"
-        },
-        {
-          "name": "MIES",
-          "description": "[Licence](http://www.ga.gov.au/copyright)",
-          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-          "url": "http://geoportal.inclusion.gob.ec/geoserver/aseguramiento_no_contributivo/wms",
-          "type": "wms-getCapabilities"
-        },
-        {
-          "name": "Ministerio de Agricultura",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "Ortofoto Nacional Ecuador",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://181.112.137.164:8080/geoserver/nacional/wms?SERVICE=WMS&VERSION=1.3.0",
-              "layers":"orto_ecuador",
-              "type": "wms",
-              "opacity":1
-            },
-            {
-              "name": "Cobertura y Uso de la Tierra",  // http://geoportal.sigtierras.gob.ec:8080/GeoserverViewer/
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Estimaciones de Cultivos",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/cobertura/E25k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Industrias y servicios del agro",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/infraestructura/E50k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Registros Administrativos Agropecuarios",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/registros/E5k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Redes Comerciales",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/tematicas/E50k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Zonificaciones Agroecológicas y Zonificaciones Agroecológicas Económicas",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/demarcacion/E250k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Accesibilidad - Geomorfología - Geopedología",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Estudios Agropecuarios Derivados",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/tematicas/E25k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Programas e Incentivos",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/cobertura/E5k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Catastro Rural",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://181.112.137.169:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Inventario de Mapas Históricos",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://geoportal.agricultura.gob.ec/tematicas/E250k/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Ortofotos Nivel Nacional",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://181.112.137.164:8080/geoserver/nacional/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Ortofotos Nivel Cantonal",
-              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
-              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
-              "url": "http://ortofotos.sigtierras.gob.ec/geoserver/wms?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            }
-          ] 
-        },
-        {
-         "name": "SENAGUA",
-         "description": "SECRETARIA DEL AGUA",
-         "dataCustodian": "[SENAGUA](https://www.agua.gob.ec/)",
-         "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-         "type": "wfs-getCapabilities"
-       },
-       {
-          "name": "Instituto Geofísico",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "Volcánes",
-              "type": "group",
-              "preserveOrder": true,
-              "isOpen": false,
-              "items":[
-                {
-                  "name": "Volcanes Clasificación por Estado de Actividad",
-                  "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                  "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                  "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Volcanes/MapServer/0",
-                  "type": "esri-mapServer"
-                },
-                {
-                  "name": "Desplazamiento GPS - Volcanes el Ecuador",
-                  "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                  "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                  "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/GPS_V/MapServer/0",
-                  "type": "esri-mapServer"
-                },
-                {
-                  "name": "Volcánes",
-                  "type": "group",
-                  "preserveOrder": true,
-                  "isOpen": false,
-                  "items":[
-                    {
-                      "name": "Antisana",
-                      "type": "group",
-                      "preserveOrder": true,
-                      "isOpen": false,
-                      "items":[
-                        {
-                          "name": "Antisana Sismos",
-                          "description": "Se presenta la sismicidad registrada los últimos 180 días, asociados al volcán Antisana ",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Antisana_sismos/MapServer/0",
-                          "type": "esri-mapServer",
-                          "opacity":1
-                         }
-                        
-                      ]  
-                    },
-                    {
-                      "name": "Cayambe",
-                      "type": "group",
-                      "preserveOrder": true,
-                      "isOpen": false,
-                      "items":[
-                        {
-                          "name": "Cayambe Amenaza",
-                          "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal ",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Amenaza/MapServer/0",
-                          "type": "esri-mapServer"
-                        },
-                        {
-                          "name": "Cayambe Cenzia",
-                          "description": "Portencial caída de piroclástos (ceniza) asociada al volcán Cayambe con un escenario como el de San Marcos y un VEI entre 3 a 4",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Ceniza/MapServer/0",
-                          "type": "esri-mapServer"
-                        },
-                        {
-                          "name": "Cayambe Sector",
-                          "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sector/MapServer/1",
-                          "type": "esri-mapServer"
-                        },
-                        {
-                          "name": "Cayambe Sismos",
-                          "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sismos/MapServer/0",
-                          "type": "esri-mapServer"
-                        }
-                      ]  
-                    },
-                    {
-                      "name": "Cerro Negro",
-                      "type": "group",
-                      "preserveOrder": true,
-                      "isOpen": false,
-                      "items":[
-                        {
-                          "name": "Cerro Negro Amenaza",
-                          "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Amenaza/MapServer/0",
-                          "type": "esri-mapServer"
-                        },
-                        {
-                          "name": "Cerro Negro Balístico",
-                          "description": "Peligro volcánico asociado por caída de proyectiles balísticos al complejo volcánico Chiles - Cerro Negro",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Balistico/MapServer/0",
-                          "type": "esri-mapServer"
-                        },
-                        {
-                          "name": "Cerro Negro Piroclastos",
-                          "description": "Caidas de ceniza asociado al complejo volcánico Chiles - Cerro Negro ",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_piroclastos/MapServer/0",
-                          "type": "esri-mapServer"
-                        },
-                        {
-                          "name": "Cerro Negro Sismos",
-                          "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_sismos/MapServer/0",
-                          "type": "esri-mapServer",
-                          "opacity":1
-                        },
-                        {
-                          "name": "Cerro Negro Población",
-                          "description": "Población en la zona de influencia del complejo volcánico Chiles - Cerro Negro. Datos a nivel de cantón, zona amanzanada y sector ",
-                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
-                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_poblacion/MapServer",
-                          "type": "esri-mapServer-group"
-                        }
-                        
-                        
-                        
-                      ]  
-                    }
-                    
-                    
-
-                  ]
-                }
-                
-              ]
-            }    
-            
-          ]
-        },    
-        {
-          "name": "Ministerio de Minería - ARCOM",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "Catastro Minero",
-              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "http://181.211.37.231:1028/arcgis/rest/services/Concesiones/CatastroMineroNacional/MapServer",
-              "type": "esri-mapServer-group"
-            },
-            {
-              "name": "Catastro Minero- Tipo Conseción",
-              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "http://181.211.37.231:1028/arcgis/rest/services/Gads/Concesiones_Produccion/MapServer",
-              "type": "esri-mapServer-group"
-            },
-            {
-              "name": "Catastro Minero- Producción",
-              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "http://181.211.37.231:1028/arcgis/rest/services/Gads/Concesiones_Produccion/FeatureServer",
-              "type": "esri-featureServer"
-            },
-            {
-              "name": "Cartografía Base",
-              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "http://181.211.37.231:1028/arcgis/services/CartografiaBase/MapServer/WMSServer?request=GetCapabilities&service=WMS",
-              "type": "wms-getCapabilities"
-            }
-            
-            
-
-          ]
-        },    
-        {
-          "name": "Gestión de Riesgos",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "Actividad Volcánica",
-              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/Actividad_Volc%C3%A1nica/FeatureServer/0",
-              "type": "esri-featureServer"
-            },
-            {
-              "name": "Movilidad Humana",
-              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/MovilidadHumana/FeatureServer/0",
-              "type": "esri-featureServer"
-            },
-            {
-              "name": "Volcanes Mundo",
-              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/mundo_volcanes/FeatureServer/0",
-              "type": "esri-featureServer"
-            },
-            {
-              "name": "COEs Activos - Comietes de Operación de Emergencias",
-              "type": "group",
-              "preserveOrder": true,
-              "isOpen": false,
-              "items":[
-                {
-                  "name": "COE Parroquial Activo",
-                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/1",
-                  "type": "esri-featureServer"
-                },
-                {
-                  "name": "COE Cantonal Activo",
-                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/0",
-                  "type": "esri-featureServer"
-                },
-                {
-                  "name": "COE Provincial Activo",
-                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/2",
-                  "type": "esri-featureServer"
-                }
-              ]
-            },    
-            
-            {
-              "name": "Pronóstico de Deslizamientos",
-              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/pronostico/FeatureServer",
-              "type": "esri-featureServer-group"
-            },
-            {
-              "name": "Eje Vial con Amenazas",
-              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
-              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
-              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/eje_vial/FeatureServer",
-              "type": "esri-featureServer-group"
-            }
-          ]
-        },    
-        {
-          "name": "Hidrocarburos",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "EPP PetroEcuador",
-              "description": "[Licence](http://mhgeoportal.hidrocarburos.gob.ec/)",
-              "dataCustodian": "[EPPP](http://www.hidrocarburos.gob.ec/)",
-              "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            },
-            {
-              "name": "Ministerio de Hidrocarburos",
-              "description": "[Licence](http://mhgeoportal.hidrocarburos.gob.ec/)",
-              "dataCustodian": "[INEC](http://www.ga.gov.au/)",
-              "url": "http://mhgeoportal.hidrocarburos.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-              "type": "wms-getCapabilities"
-            }
-          ]  
-
-        },
-        {
-          "name": "Empresa Eléctrica Pública [CNELEP]",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "REP/CNELEPTecnico",
-              "description": "Empresa Eléctrica Pública [CNELEP]",
-              "url": "https://geoportal.cnelep.gob.ec/arcgis/rest/services/REP/CNELEPTecnico/MapServer",
-              "type": "esri-mapServer"
-            }
-          ]
-        },  
         {
           
           "name": "Agencia de Regulación y Control de Electricidad [ARCONEL]",
@@ -2785,28 +2828,242 @@
           ]
         },
         {
-          "name": "Empresa Eléctrica Regional Centrosur",
+          "name": "Coódigo Postal",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[INEC](http://www.ga.gov.au/)",
+          "url": "https://www.codigopostal.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Instituto Geográfico Militar - IGM",
           "type": "group",
           "preserveOrder": true,
           "isOpen": false,
           "items":[
             {
-              "name": "Red de Distribución",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/RedesDist_EERCS/MapServer",
-              "type": "esri-mapServer-group"
+              "name": "Mapa Base Ecuador",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/geoserver/mapabase/wms?service=wms&version=1.3.0",
+              "type": "wms-getCapabilities"
             },
             {
-              "name": "Cartografía Base",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/Cartografia_EERCS/MapServer",
-              "type": "esri-mapServer-group"
+              "name": "Fotografías Aéreas",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/orto/wms?service=wms&version=1.3.0",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Modelo Digital de Terreno",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/dtm/wms",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Galápagos 25k",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/galapagos25/wms",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:5k",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/5k/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:25k",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/25k/wms",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:50k",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec/50k/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:250k - Regional",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/regional/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Escala 1:1'000.000 - Nacional",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/nacional/wms?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información Binacional Ecuador-Colombia Servicio WMS",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/binacional/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Información del Instituto Geográfico Militar",
+              "description": "Instituto Geográfico Militar",
+              "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec/)",
+              "url": "http://www.geoportaligm.gob.ec:80/geoserver/ows?SERVICE=WMS&",
+              "type": "wms-getCapabilities"
             }
-             
-            ]
-        },    
+            
+          ]
+          
+        },
+        {
+          "name": "Instituto Geofísico",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Volcánes",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "Volcanes Clasificación por Estado de Actividad",
+                  "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Volcanes/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Desplazamiento GPS - Volcanes el Ecuador",
+                  "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                  "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/GPS_V/MapServer/0",
+                  "type": "esri-mapServer"
+                },
+                {
+                  "name": "Volcánes",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "isOpen": false,
+                  "items":[
+                    {
+                      "name": "Antisana",
+                      "type": "group",
+                      "preserveOrder": true,
+                      "isOpen": false,
+                      "items":[
+                        {
+                          "name": "Antisana Sismos",
+                          "description": "Se presenta la sismicidad registrada los últimos 180 días, asociados al volcán Antisana ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Antisana_sismos/MapServer/0",
+                          "type": "esri-mapServer",
+                          "opacity":1
+                         }
+                        
+                      ]  
+                    },
+                    {
+                      "name": "Cayambe",
+                      "type": "group",
+                      "preserveOrder": true,
+                      "isOpen": false,
+                      "items":[
+                        {
+                          "name": "Cayambe Amenaza",
+                          "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Amenaza/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cayambe Cenzia",
+                          "description": "Portencial caída de piroclástos (ceniza) asociada al volcán Cayambe con un escenario como el de San Marcos y un VEI entre 3 a 4",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Ceniza/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cayambe Sector",
+                          "description": "Coberturas de la amenaza del volcán Cayambe. Estos límites son solo aproximados y de ninguna manera constituyen bordes absolutos. Esto se debe a que los fenómenos eruptivos pueden variar enormemente en su magnitud, alcance y volumen, y por lo tanto en su extensión lateral y longitudinal",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sector/MapServer/1",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cayambe Sismos",
+                          "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/Cayambe_Sismos/MapServer/0",
+                          "type": "esri-mapServer"
+                        }
+                      ]  
+                    },
+                    {
+                      "name": "Cerro Negro",
+                      "type": "group",
+                      "preserveOrder": true,
+                      "isOpen": false,
+                      "items":[
+                        {
+                          "name": "Cerro Negro Amenaza",
+                          "description": "[Licence](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Amenaza/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cerro Negro Balístico",
+                          "description": "Peligro volcánico asociado por caída de proyectiles balísticos al complejo volcánico Chiles - Cerro Negro",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_Balistico/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cerro Negro Piroclastos",
+                          "description": "Caidas de ceniza asociado al complejo volcánico Chiles - Cerro Negro ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_piroclastos/MapServer/0",
+                          "type": "esri-mapServer"
+                        },
+                        {
+                          "name": "Cerro Negro Sismos",
+                          "description": "Se presenta la sismicidad registrada los últimos 180 días.Se publican todos los eventos registrados por la RENSIG. ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_sismos/MapServer/0",
+                          "type": "esri-mapServer",
+                          "opacity":1
+                        },
+                        {
+                          "name": "Cerro Negro Población",
+                          "description": "Población en la zona de influencia del complejo volcánico Chiles - Cerro Negro. Datos a nivel de cantón, zona amanzanada y sector ",
+                          "dataCustodian": "[Instituto Geofísico del Ecuador](https://www.igepn.edu.ec/red-de-observatorios-vulcanologicos-rovig/)",
+                          "url": "https://wms.igepn.edu.ec/sig/rest/services/Volcanica/CCN_poblacion/MapServer",
+                          "type": "esri-mapServer-group"
+                        }
+                        
+                        
+                        
+                      ]  
+                    }
+                    
+                    
+
+                  ]
+                }
+                
+              ]
+            }    
+            
+          ]
+        },  
         {
           "name": "Instituto Oceanográfico (INOCAR)",
           "type": "group",
@@ -2907,7 +3164,7 @@
           ]
         },
         {
-          "name": "INAMHI - Instituto Nacional de Meteorología e Hidrología",
+          "name": "Instituto Nacional de Meteorología e Hidrología - INAMHI",
           "type": "group",
           "preserveOrder": true,
           "isOpen": false,
@@ -2932,100 +3189,317 @@
         },        
         {
            //http://200.110.88.36/geoinec/inec/wms https://anda.inec.gob.ec/anda/index.php/catalog
-          "name": "INEC",
+          "name": "Instituto Nacional de Estadísticas y Censos - INEC",
           "description": "[Licence](http://www.ga.gov.au/copyright)",
           "dataCustodian": "[INEC](http://www.ga.gov.au/)",
           "url": "https://geoinec.inec.gob.ec/geoinec/ows?service=wfs&version=2.0.0&request=GetCapabilities",
           "type": "wfs-getCapabilities"
         },
         {
-          "name": "Ins. Evaluación Educativa",
+          "name": "Instituto de Evaluación Educativa",
           "description": "[Licence](http://www.ga.gov.au/copyright)",
           "dataCustodian": "[INEC](http://www.ga.gov.au/)",
           "url": "http://geoportal.evaluacion.gob.ec:8080/geoserverineval/INEVAL/wms?",
           "type": "wms-getCapabilities"
         },
         {
-          "name": "Coódigo Postal",
-          "description": "[Licence](http://www.ga.gov.au/copyright)",
-          "dataCustodian": "[INEC](http://www.ga.gov.au/)",
-          "url": "https://www.codigopostal.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
-          "type": "wms-getCapabilities"
-        },
-        {
-          "name": "Universidad del Azuay",
+          "name": "Ministerio de Agricultura",
           "type": "group",
           "preserveOrder": true,
           "isOpen": false,
           "items":[
             {
-              "name": "UDA: Visor Senplades Zona 6",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/VisorSenplades/wms?",
+              "name": "Ortofoto Nacional Ecuador",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://181.112.137.164:8080/geoserver/nacional/wms?SERVICE=WMS&VERSION=1.3.0",
+              "layers":"orto_ecuador",
+              "type": "wms",
+              "opacity":1
+            },
+            {
+              "name": "Cobertura y Uso de la Tierra",  // http://geoportal.sigtierras.gob.ec:8080/GeoserverViewer/
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Planificación Territorial",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/PlanificacionTerritorial/wms?",
+              "name": "Estimaciones de Cultivos",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/cobertura/E25k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Riesgos Cuenca",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/riesgos_cuenca/wms?",
+              "name": "Industrias y servicios del agro",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/infraestructura/E50k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Cobertura Vegetal 5k Ricaurte",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/cobertura_vegetal_5k/wms?",
+              "name": "Registros Administrativos Agropecuarios",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/registros/E5k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Cobertura Vegetal Azuay",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/cob_ord_rural/wms?",
+              "name": "Redes Comerciales",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/tematicas/E50k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Inventario Forestal",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/inventario_forestal/wms?",
+              "name": "Zonificaciones Agroecológicas y Zonificaciones Agroecológicas Económicas",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/demarcacion/E250k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Azuay 250k",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/azuay_250k/wms?",
+              "name": "Accesibilidad - Geomorfología - Geopedología",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.sigtierras.gob.ec:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Ortofotos Drone",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/ortofotos_drone/wms?",
+              "name": "Estudios Agropecuarios Derivados",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/tematicas/E25k/wms?service=wms&version=1.3.0&request=GetCapabilities",
               "type": "wms-getCapabilities"
             },
             {
-              "name": "UDA: Calidad Ambiental",
-              "description": "[Licence](http://www.ga.gov.au/copyright)",
-              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
-              "url": "http://gis.uazuay.edu.ec:8080/geoserver/calidad_ambiental/wms?",
+              "name": "Programas e Incentivos",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/cobertura/E5k/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Catastro Rural",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://181.112.137.169:8080/geoserver/sigtierras/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Inventario de Mapas Históricos",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://geoportal.agricultura.gob.ec/tematicas/E250k/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Ortofotos Nivel Nacional",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://181.112.137.164:8080/geoserver/nacional/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "Ortofotos Nivel Cantonal",
+              "description": "Ministerio de Agricultura, Ganadería, Acuacultura y Pesca [MAGAP]",
+              "dataCustodian": "[MAGAP](https://www.agricultura.gob.ec)",
+              "url": "http://ortofotos.sigtierras.gob.ec/geoserver/wms?service=wms&version=1.3.0&request=GetCapabilities",
+              "type": "wms-getCapabilities"
+            }
+          ] 
+        },
+        {
+          "name": "Ministerio del Ambiente",
+          "description": "Ministerio del Ambiente [MAE]",
+          "dataCustodian": "[MAE](http://www.ambiente.gob.ec/)",
+          "url": "http://mapainteractivo.ambiente.gob.ec/geoserver/wms",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Ministerio de Educación",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "url": "http://geoportal.educacion.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Ministerio de Hidrocarburos",
+          "description": "[Licence](http://mhgeoportal.hidrocarburos.gob.ec/)",
+          "dataCustodian": "[INEC](http://www.ga.gov.au/)",
+          "url": "http://mhgeoportal.hidrocarburos.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Ministerio de Inclusión Económica y Social MIES",
+          "description": "[Licence](http://www.ga.gov.au/copyright)",
+          "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+          "url": "http://geoportal.inclusion.gob.ec/geoserver/aseguramiento_no_contributivo/wms",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Ministerio de Minería - ARCOM",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Catastro Minero",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/rest/services/Concesiones/CatastroMineroNacional/MapServer",
+              "type": "esri-mapServer-group"
+            },
+            {
+              "name": "Catastro Minero- Tipo Conseción",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/rest/services/Gads/Concesiones_Produccion/MapServer",
+              "type": "esri-mapServer-group"
+            },
+            {
+              "name": "Catastro Minero- Producción",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/rest/services/Gads/Concesiones_Produccion/FeatureServer",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Cartografía Base",
+              "description": "[Licence](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "dataCustodian": "[Agencia de Regulación y Control Minero](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "http://181.211.37.231:1028/arcgis/services/CartografiaBase/MapServer/WMSServer?request=GetCapabilities&service=WMS",
               "type": "wms-getCapabilities"
             }
             
             
-            
-            
+
           ]
+        }, 
+        {
+         "name": "Secretaría del Agua - SENAGUA",
+         "description": "SECRETARIA DEL AGUA",
+         "dataCustodian": "[SENAGUA](https://www.agua.gob.ec/)",
+         "url": "http://geoportal.senagua.gob.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+         "type": "wfs-getCapabilities"
+       },
+       {
+          "name": "Secretaŕia de Gestión de Riesgos",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Actividad Volcánica",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/Actividad_Volc%C3%A1nica/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Movilidad Humana",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/MovilidadHumana/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "Volcanes Mundo",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/mundo_volcanes/FeatureServer/0",
+              "type": "esri-featureServer"
+            },
+            {
+              "name": "COEs Activos - Comietes de Operación de Emergencias",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "COE Parroquial Activo",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/1",
+                  "type": "esri-featureServer"
+                },
+                {
+                  "name": "COE Cantonal Activo",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/0",
+                  "type": "esri-featureServer"
+                },
+                {
+                  "name": "COE Provincial Activo",
+                  "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+                  "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+                  "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/COES_ACTIVOS/FeatureServer/2",
+                  "type": "esri-featureServer"
+                }
+              ]
+            },    
+            
+            {
+              "name": "Pronóstico de Deslizamientos",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/pronostico/FeatureServer",
+              "type": "esri-featureServer-group"
+            },
+            {
+              "name": "Eje Vial con Amenazas",
+              "description": "[Licence](https://gestionriesgosec.maps.arcgis.com/apps/MapSeries/index.html?appid=164f9cbc63784d61be1372232c790620)",
+              "dataCustodian": "[Secretaría de Gestión de Riesgos](http://geo.controlminero.gob.ec:1026/geo_visor/)",
+              "url": "https://services6.arcgis.com/X4DDn4hp5pj0AEZl/ArcGIS/rest/services/eje_vial/FeatureServer",
+              "type": "esri-featureServer-group"
+            }
+          ]
+        },    
+        {
+          "name": "EPP PetroEcuador",
+          "description": "[Licence](http://mhgeoportal.hidrocarburos.gob.ec/)",
+          "dataCustodian": "[EPPP](http://www.hidrocarburos.gob.ec/)",
+          "url": "http://sig.eppetroecuador.ec/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Empresa Eléctrica Pública [CNELEP]",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "REP/CNELEPTecnico",
+              "description": "Empresa Eléctrica Pública [CNELEP]",
+              "url": "https://geoportal.cnelep.gob.ec/arcgis/rest/services/REP/CNELEPTecnico/MapServer",
+              "type": "esri-mapServer"
+            }
+          ]
+        },  
+        {
+          "name": "Empresa Eléctrica Regional Centrosur",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Red de Distribución",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/RedesDist_EERCS/MapServer",
+              "type": "esri-mapServer-group"
+            },
+            {
+              "name": "Cartografía Base",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "https://geoinformacion.centrosur.gob.ec/server/rest/services/Geoportal/Cartografia_EERCS/MapServer",
+              "type": "esri-mapServer-group"
+            }
+             
+            ]
         },    
         {
           "name": "GADS Provinciales",
@@ -3150,7 +3624,78 @@
             // } 
             
           ]
-        }    
+        },
+        {
+          "name": "Universidad del Azuay",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "UDA: Visor Senplades Zona 6",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/VisorSenplades/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Planificación Territorial",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/PlanificacionTerritorial/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Riesgos Cuenca",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/riesgos_cuenca/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Cobertura Vegetal 5k Ricaurte",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/cobertura_vegetal_5k/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Cobertura Vegetal Azuay",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/cob_ord_rural/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Inventario Forestal",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/inventario_forestal/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Azuay 250k",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/azuay_250k/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Ortofotos Drone",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/ortofotos_drone/wms?",
+              "type": "wms-getCapabilities"
+            },
+            {
+              "name": "UDA: Calidad Ambiental",
+              "description": "[Licence](http://www.ga.gov.au/copyright)",
+              "dataCustodian": "[Geoscience Australia](http://www.ga.gov.au/)",
+              "url": "http://gis.uazuay.edu.ec:8080/geoserver/calidad_ambiental/wms?",
+              "type": "wms-getCapabilities"
+            }
+          ]
+        },        
        
         
 
@@ -3261,6 +3806,50 @@
           "dataCustodian": "[NASA Global Imagery](https://earthdata.nasa.gov)",
           "url": "https://gibs-b.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi",
           "type": "wms-getCapabilities"
+        },
+        {
+          "name": "EOX IT Services",
+          "description": "EOX",
+          "dataCustodian": "https://eox.at",
+          "url": "https://tiles.maps.eox.at/wms?",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "NASA Earth Observations (NEO) WMS",
+          "description": "NASA",
+          "dataCustodian": "https://neo.sci.gsfc.nasa.gov",
+          "url": "https://neo.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&service=WMS&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "GEBCO WMS",
+          "description": "GEBCO",
+          "dataCustodian": "https://www.gebco.net",
+          "url": "https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Landsat Satélite WMS",
+          "description": "USGS",
+          "dataCustodian": "https://landsatlook.usgs.gov/",
+          "url": "https://landsatlook.usgs.gov/arcgis/services/LandsatLook/ImageServer/WMSServer",
+          "type": "wms-getCapabilities"
+        },
+        {
+          "name": "Incendios últimas 24 horas - Global_MODIS [WRI]",
+          "description": "https://www.wri.org/",
+          "dataCustodian": "https://www.wri.org/",
+          "url": "https://gis-gfw.wri.org/arcgis/rest/services/Fires/FIRMS_Global_MODIS_24hrs/MapServer",
+          "type": "esri-mapServer",
+          "opacity":1
+        },
+        {
+          "name": "Incendios últimos 7 días - Global_MODIS [WRI]",
+          "description": "https://www.wri.org/",
+          "dataCustodian": "https://www.wri.org/",
+          "url": "https://gis-gfw.wri.org/arcgis/rest/services/Fires/FIRMS_Global_MODIS_7d/MapServer",
+          "type": "esri-mapServer",
+          "opacity":1
         }
       ]
     }    
