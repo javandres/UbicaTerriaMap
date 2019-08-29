@@ -1971,7 +1971,9 @@
                   "dataVariable": "taza_crecimiento"
               },
               "showWarnings":false,
-              "dateFormat":"yyyy"
+              "dateFormat":"yyyy",
+              "description":"Fuente: Censo de Población y Vivienda 2010, 2001, 1990",
+              "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
             },
             {
               "name": "Densidad Poblacional a nivel Parroquial [INEC]",
@@ -1980,7 +1982,9 @@
               "tableStyle": {
                   "dataVariable": "Densidad Poblacional"
               },
-              "showWarnings":false
+              "showWarnings":false,
+              "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+              "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
             },
             {
               "name": "Densidad Poblacional a nivel Provincial [INEC]",
@@ -1989,7 +1993,9 @@
               "tableStyle": {
                   "dataVariable": "DENSIDAD POBLACIONAL"
               },
-              "showWarnings":false
+              "showWarnings":false,
+              "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+              "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
             },
             {
               "name": "Población y proporción por sexo e índices de feminidad y masculinidad",
@@ -2004,7 +2010,9 @@
                   "tableStyle": {
                       "dataVariable": "indice_feminidad"
                   },
-                  "showWarnings":false
+                  "showWarnings":false,
+                  "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 },
                 {
                   "name": "CANTON - Población y proporción por sexo e índices de feminidad y masculinidad [INEC]",
@@ -2013,7 +2021,9 @@
                   "tableStyle": {
                       "dataVariable": "indice_feminidad"
                   },
-                  "showWarnings":false
+                  "showWarnings":false,
+                  "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 },
                 {
                   "name": "PARROQUIA - Población y proporción por sexo e índices de feminidad y masculinidad [INEC]",
@@ -2022,7 +2032,9 @@
                   "tableStyle": {
                       "dataVariable": "indice_feminidad"
                   },
-                  "showWarnings":false
+                  "showWarnings":false,
+                  "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 }
               ]
             },
@@ -2039,7 +2051,9 @@
                   "tableStyle": {
                       "dataVariable": "total_rural"
                   },
-                  "showWarnings":false
+                  "showWarnings":false,
+                  "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 },
                 {
                   "name": "CANTON - Población total, por área y sexo, porcentaje de la población por sexo en el área urbana y rural [INEC]",
@@ -2048,7 +2062,9 @@
                   "tableStyle": {
                       "dataVariable": "total_rural"
                   },
-                  "showWarnings":false
+                  "showWarnings":false,
+                  "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 },
                 {
                   "name": "PARROQUIA - Población total, por área y sexo, porcentaje de la población por sexo en el área urbana y rural [INEC]",
@@ -2057,10 +2073,54 @@
                   "tableStyle": {
                       "dataVariable": "total_rural"
                   },
-                  "showWarnings":false
+                  "showWarnings":false,
+                  "description":"Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 }
               ]
-            }  
+            },	  
+            {
+              "name": "Índice de dependencia infantil",
+              "description":"Es la medida utilizada para medir la necesidad potencial de soporte social de la población infantil y juvenil por parte de la población en edad activa. Es el cociente entre la de menos de 15 y la población de 15 a 59 años de edad. ",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "PROVINCIA - Índice de dependencia Infantil [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai05_indice_dependencia_infantil_provincia&maxFeatures=50&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Índice  de Dependencia infantil"
+                  },
+                  "showWarnings":false,
+                  "description":"Es la medida utilizada para medir la necesidad potencial de soporte social de la población infantil y juvenil por parte de la población en edad activa. Es el cociente entre la de menos de 15 y la población de 15 a 59 años de edad. Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "CANTON - Índice de dependencia Infantil [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai05_indice_dependencia_infantil_canton&maxFeatures=500&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Índice  de Dependencia infantil"
+                  },
+                  "showWarnings":false,
+                  "description":"Es la medida utilizada para medir la necesidad potencial de soporte social de la población infantil y juvenil por parte de la población en edad activa. Es el cociente entre la de menos de 15 y la población de 15 a 59 años de edad. Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "PARROQUIA - Índice de dependencia Infantil [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai05_indice_dependencia_infantil_parroquia&maxFeatures=5000&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Índice  de Dependencia infantil"
+                  },
+                  "showWarnings":false,
+                  "description":"Es la medida utilizada para medir la necesidad potencial de soporte social de la población infantil y juvenil por parte de la población en edad activa. Es el cociente entre la de menos de 15 y la población de 15 a 59 años de edad. Fuente: Censo de Población y Vivienda 2010, reconstruido con la División Político- Administrativa vigente a octubre 2017",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                }
+              ]
+            }
           ]
         }, 
         {
