@@ -1963,6 +1963,104 @@
           "preserveOrder": true,
           "isOpen": false,
           "items":[
+            {
+              "name": "POBLACIÓN Y TASAS DE CRECIMIENTO INTERCENSAL DE 2010-2001-1990 POR SEXO, SEGÚN PARROQUIAS [INEC]",
+              "type": "csv",
+              "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Apoblacion_1990_2010&maxFeatures=500000&outputFormat=csv",
+              "tableStyle": {
+                  "dataVariable": "taza_crecimiento"
+              },
+              "showWarnings":false,
+              "dateFormat":"yyyy"
+            },
+            {
+              "name": "Densidad Poblacional a nivel Parroquial [INEC]",
+              "type": "csv",
+              "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai2_densidad_pobla_parr&maxFeatures=5000&outputFormat=csv",
+              "tableStyle": {
+                  "dataVariable": "Densidad Poblacional"
+              },
+              "showWarnings":false
+            },
+            {
+              "name": "Densidad Poblacional a nivel Provincial [INEC]",
+              "type": "csv",
+              "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai12_densidad_pob_provincia&maxFeatures=50&outputFormat=csv",
+              "tableStyle": {
+                  "dataVariable": "DENSIDAD POBLACIONAL"
+              },
+              "showWarnings":false
+            },
+            {
+              "name": "Población y proporción por sexo e índices de feminidad y masculinidad",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "PROVINCIA - Población y proporción por sexo e índices de feminidad y masculinidad [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai02_porc_muj_ind_fem_masc_provincia&maxFeatures=50&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "indice_feminidad"
+                  },
+                  "showWarnings":false
+                },
+                {
+                  "name": "CANTON - Población y proporción por sexo e índices de feminidad y masculinidad [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai02_porc_muj_ind_fem_masc_canton&maxFeatures=500&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "indice_feminidad"
+                  },
+                  "showWarnings":false
+                },
+                {
+                  "name": "PARROQUIA - Población y proporción por sexo e índices de feminidad y masculinidad [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai02_porc_muj_ind_fem_masc_parroquia&maxFeatures=5000&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "indice_feminidad"
+                  },
+                  "showWarnings":false
+                }
+              ]
+            },
+            {
+              "name": "Población según área URBANA / RURAL x SEXO",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "PROVINCIA - Población total, por área y sexo, porcentaje de la población por sexo en el área urbana y rural [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai04_porcentaje_urb_rural_sexo_provincia&maxFeatures=50&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "total_rural"
+                  },
+                  "showWarnings":false
+                },
+                {
+                  "name": "CANTON - Población total, por área y sexo, porcentaje de la población por sexo en el área urbana y rural [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai04_porcentaje_urb_rural_sexo_canton&maxFeatures=500&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "total_rural"
+                  },
+                  "showWarnings":false
+                },
+                {
+                  "name": "PARROQUIA - Población total, por área y sexo, porcentaje de la población por sexo en el área urbana y rural [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai04_porcentaje_urb_rural_sexo_parroquia&maxFeatures=5000&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "total_rural"
+                  },
+                  "showWarnings":false
+                }
+              ]
+            }  
           ]
         }, 
         {
