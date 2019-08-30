@@ -2120,6 +2120,91 @@
                   "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 }
               ]
+            },
+            {
+              "name": "Índice Generacional de Adultos Mayores (IGA)",
+              "description":"Población por grandes grupos de edad e indice generacional de adultos mayores. Índice Generacional de Ancianos (IGA). Representa el número de personas de 35 a 64 años por cada persona de 65 y más. Se supone que mide el número de personas de 35 a 64 años que podrían hacerse cargo de cada persona de 65 y más años.",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "PROVINCIA - Índice Generacional de Adultos Mayores (IGA) [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai06_indice_generacional_provincia&maxFeatures=50&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Índice  Generacional de adultos mayores"
+                  },
+                  "showWarnings":false,
+                  "description":"Población por grandes grupos de edad e indice generacional de adultos mayores. Índice Generacional de Ancianos (IGA). Representa el número de personas de 35 a 64 años por cada persona de 65 y más. Se supone que mide el número de personas de 35 a 64 años que podrían hacerse cargo de cada persona de 65 y más años.",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "CANTON - Índice Generacional de Adultos Mayores (IGA) [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai06_indice_generacional_canton&maxFeatures=500&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Índice  Generacional de adultos mayores"
+                  },
+                  "showWarnings":false,
+                  "description":"Población por grandes grupos de edad e indice generacional de adultos mayores. Índice Generacional de Ancianos (IGA). Representa el número de personas de 35 a 64 años por cada persona de 65 y más. Se supone que mide el número de personas de 35 a 64 años que podrían hacerse cargo de cada persona de 65 y más años.",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "PARROQUIA - Índice Generacional de Adultos Mayores (IGA) [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai06_indice_generacional_parroquia&maxFeatures=5000&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Índice  Generacional de adultos mayores"
+                  },
+                  "showWarnings":false,
+                  "description":"Población por grandes grupos de edad e indice generacional de adultos mayores. Índice Generacional de Ancianos (IGA). Representa el número de personas de 35 a 64 años por cada persona de 65 y más. Se supone que mide el número de personas de 35 a 64 años que podrían hacerse cargo de cada persona de 65 y más años.",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                }
+              ]
+            },
+            {
+              "name": "Población por Estado Civil y Conyugal",
+              "description":"Población de 12 años y más de edad, por estado civil o conyugal y porcentaje de la población",
+              "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "PROVINCIA - Población por Estado Civil y Conyugal [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai07_estado_civil_provincia&maxFeatures=50&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": " Casado/a"
+                  },
+                  "showWarnings":false,
+                  "description":"Población de 12 años y más de edad, por estado civil o conyugal y porcentaje de la población",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "CANTON - Población por Estado Civil y Conyugal [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai07_estado_civil_canton&maxFeatures=500&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": " Casado/a"
+                  },
+                  "showWarnings":false,
+                  "description":"Población de 12 años y más de edad, por estado civil o conyugal y porcentaje de la población",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "PARROQUIA - Población por Estado Civil y Conyugal [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai07_estado_civil_parroquia&maxFeatures=5000&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": " Casado/a"
+                  },
+                  "showWarnings":false,
+                  "description":"Población de 12 años y más de edad, por estado civil o conyugal y porcentaje de la población",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                }
+              ]
             }
           ]
         }, 
