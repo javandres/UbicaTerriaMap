@@ -2205,6 +2205,92 @@
                   "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
                 }
               ]
+            },
+            {
+              "name": "Tasa de Analfabetismo y Condición de Alfabetismo",
+              "description":"Población de 15 años y más de edad, por condición de alfabetismo, sexo y tasa de analfabetismo, según cantón",
+              "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "PROVINCIA - Tasa de Analfabetismo y Condición de Alfabetismo, Población de 15 años y más de edad [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai08_tasa_analf_15anios_provincia&maxFeatures=50&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Analfabetismo_Total %"
+                  },
+                  "showWarnings":false,
+                  "description":"Población de 15 años y más de edad, por condición de alfabetismo, sexo y tasa de analfabetismo, según cantón",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "CANTON - Tasa de Analfabetismo y Condición de Alfabetismo, Población de 15 años y más de edad [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai08_tasa_analf_15anios_canton&maxFeatures=500&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Analfabetismo_Total %"
+                  },
+                  "showWarnings":false,
+                  "description":"Población de 15 años y más de edad, por condición de alfabetismo, sexo y tasa de analfabetismo, según cantón",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "PARROQUIA - Tasa de Analfabetismo y Condición de Alfabetismo, Población de 15 años y más de edad [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai08_tasa_analf_15anios_parroquia&maxFeatures=5000&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Analfabetismo_Total %"
+                  },
+                  "showWarnings":false,
+                  "description":"Población de 15 años y más de edad, por condición de alfabetismo, sexo y tasa de analfabetismo, según cantón",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                }
+              ]
+            },
+            {
+              "name": "Tasa de alfabetismo en población joven (de 15 a 24 años)",
+              "description":"Población de 15 a 24 años de edad, por condición de alfabetismo, sexo y tasa de alfabetismo",
+              "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "PROVINCIA - Tasa de alfabetismo en población joven (de 15 a 24 años) [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai09_tasa_alfab_joven_provincia&maxFeatures=50&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Tasa Alfabetismo Total %"
+                  },
+                  "showWarnings":false,
+                  "description":"Al analizar las condiciones de alfabetismo en población joven (de 15 a 24 años), se puede observar que a nivel provincial no se evidencian brechas considerables, superando el porcentaje de alfabetismo el 95% tanto para hombres como para mujeres. Sin embargo, al observar los territorios desagregados a nivel cantonal y parroquial se encuentran jurisdicciones cantonales en las que los porcentajes de alfabetismo son menores al 90%, y jurisdicciones parroquiales en que se los encuentra entre el 70% y menores al 90%.",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "CANTON - Tasa de alfabetismo en población joven (de 15 a 24 años) [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai09_tasa_alfab_joven_canton&maxFeatures=500&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Tasa Alfabetismo Total %"
+                  },
+                  "showWarnings":false,
+                  "description":"Al analizar las condiciones de alfabetismo en población joven (de 15 a 24 años), se puede observar que a nivel provincial no se evidencian brechas considerables, superando el porcentaje de alfabetismo el 95% tanto para hombres como para mujeres. Sin embargo, al observar los territorios desagregados a nivel cantonal y parroquial se encuentran jurisdicciones cantonales en las que los porcentajes de alfabetismo son menores al 90%, y jurisdicciones parroquiales en que se los encuentra entre el 70% y menores al 90%.",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                },
+                {
+                  "name": "PARROQUIA - Tasa de alfabetismo en población joven (de 15 a 24 años)  [INEC]",
+                  "type": "csv",
+                  "url": "http://ubica.ec:8600/geoserver/estadisticas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=estadisticas%3Ai09_tasa_alfab_joven_parroquia&maxFeatures=5000&outputFormat=csv",
+                  "tableStyle": {
+                      "dataVariable": "Tasa Alfabetismo Total %"
+                  },
+                  "showWarnings":false,
+                  "description":"Al analizar las condiciones de alfabetismo en población joven (de 15 a 24 años), se puede observar que a nivel provincial no se evidencian brechas considerables, superando el porcentaje de alfabetismo el 95% tanto para hombres como para mujeres. Sin embargo, al observar los territorios desagregados a nivel cantonal y parroquial se encuentran jurisdicciones cantonales en las que los porcentajes de alfabetismo son menores al 90%, y jurisdicciones parroquiales en que se los encuentra entre el 70% y menores al 90%.",
+                  "dataCustodian":"Instituto Nacional de Estadística y Censos- INEC"
+                }
+              ]
             }
           ]
         }, 
