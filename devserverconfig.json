@@ -50,6 +50,7 @@
         "app.sni.gob.ec",
         "arcgis.eeq.com.ec",
         "geoinformacion.centrosur.gob.ec:443",
-        "gis.eersa.com.ec"
+        "gis.eersa.com.ec",
+        "www.geoportaligm.gob.ec"
     ]
 }

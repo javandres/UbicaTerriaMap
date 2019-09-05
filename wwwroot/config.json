@@ -4,19 +4,19 @@
         "terria"
     ],
     parameters: {
-        googleUrlShortenerKey: null,
-        googleAnalyticsKey: null,
+        googleUrlShortenerKey: "AIzaSyClvF_7Yv8iq5TDn05q4djSvo9IH2EuE8o",
+        googleAnalyticsKey: "UA-7797332-2",
         googleAnalyticsOptions: null,
         /* Text that appears at the bottom of the map */
         disclaimer: {
-            text: "",
-            url: ""
+            text: "UBICA Ecuador",
+            url: "https://www.ubica.ec"
         },
         
         // Text that will be added to any pages printed from your site.
         printDisclaimer:{
             text:"UBICA Ecuador 2019",
-            url: "http://www.ubica.ec"
+            url: "https://www.ubica.ec"
         },
         
          
@@ -39,12 +39,12 @@
             link: "https://www.ubica.ec"
         },
         // This is used in various text messages. You should also set <title> in index.html
-        appName: "GEO - UBICAEcuador",
+        appName: "GEO.UBICA.EC",
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
             "",
-            "<a target=\"_blank\" href=\"https://www.ubica.org\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+            "<a target=\"_blank\" href=\"https://geo.ubica.ec\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
             ""
         ],
         // Shown when things go wrong.

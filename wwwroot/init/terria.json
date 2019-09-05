@@ -12,6 +12,12 @@
       "preserveOrder": true,
       "isOpen": true,
       "items": [
+
+        {
+          "name": "CHONE - WMS",
+          "url": "http://localhost:8600/geoserver/chone/wms?service=wms&version=1.3.0&request=GetCapabilities",
+          "type": "wms-getCapabilities"
+        },
         {
           "name": "Proyecto CELEC",
           "type": "group",
