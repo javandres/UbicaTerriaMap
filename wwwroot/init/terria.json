@@ -12,43 +12,6 @@
       "preserveOrder": true,
       "isOpen": true,
       "items": [
-
-        {
-          "name": "CHONE - WMS",
-          "url": "http://localhost:8600/geoserver/chone/wms?service=wms&version=1.3.0&request=GetCapabilities",
-          "type": "wms-getCapabilities"
-        },
-        {
-          "name": "Proyecto CELEC",
-          "type": "group",
-          "preserveOrder": true,
-          "isOpen": false,
-          "items":[
-            {
-              "name": "Inclinómetros",
-              "type": "csv",
-              "url": "http://localhost:8600/geoserver/celec/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=celec%3Aeb102_v_inclinometro_mes&maxFeatures=500000000&outputFormat=csv",
-              "tableStyle": {
-                  "colorMap": "white-orange-red",
-                  "dataVariable": "desplazamiento",
-                  "idColumns": ["est_id"],
-                  "scale": 2,
-                  "scaleByValue": true
-              }
-            },
-            {
-              "name": "Extensómetros",
-              "type": "csv",
-              "url": "http://localhost:8600/geoserver/celec/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=celec%3Aeb102_v_extensometros_mes&maxFeatures=500000000&outputFormat=csv",
-              "tableStyle": {
-                  "colorMap": "white-orange-red",
-                  "idColumns": ["est_id"],
-                  "scale": 2,
-                  "scaleByValue": true
-              }
-            }
-          ]
-        },    
         {
           "name": "Populares",
           "type": "group",
