@@ -1,8 +1,8 @@
 {
     "name": "GEO.UBICA.EC",
-    "short_name": "MAPAS DEL ECUADOR",
+    "short_name": "MAPAS ECUADOR",
     "theme_color": "#519ac2",
-    "background_color": "#2196f3",
+    "background_color": "#2690ca",
     "display": "standalone",
     "Scope": "/",
     "start_url": "/",
