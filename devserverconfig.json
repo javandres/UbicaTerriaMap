@@ -60,9 +60,19 @@
         "arcgis.eeq.com.ec",
         "ortofotos.sigtierras.gob.ec",
         "geoportal.inclusion.gob.ec"
+    ],
 
-        
+    "shareUrlPrefixes": {
+        "g": {
+            "service": "gist",
+            "accessToken":"05fa39c9cc0ef8c799aef00ed34fafc7baf77b3c",
+            "userAgent": "UBICAECViewer3D",
+            "gistFilename":  "usercatalog.json",
+            "gistDescription": "UBICA Ecuador short URLs"
+        }
+    },
+    "newShareUrlPrefix": "g",
+    "hostName": "geo.ubica.ec"
 
-
-    ]
+    
 }
