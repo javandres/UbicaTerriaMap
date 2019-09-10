@@ -19,6 +19,44 @@
           "isOpen": false,
           "items":[
             {
+              "name": "Img Satélite - Incendio Forestal Quilanga, Loja - 9  de Sept, 2009",
+              "type": "group",
+              "preserveOrder": true,
+              "isOpen": false,
+              "items":[
+                {
+                  "name": "False Color - Imágen Satélite Séntinel 2 / 2B L1C",
+                  "dataCustodian": "[UBICA Ecuador](https://geo.ubica.ec",
+                  "url": "http://ubica.ec:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"2019-09-09_Sentinel-2B_L1C_False_color_urban",
+                  "type": "wms",
+                  "zoomOnEnable":true,
+                  "opacity":1
+                },
+                {
+                  "name": "Infrarojo de Onda Corta (SWIR) - Imágen Satélite Séntinel 2 / 2B L1C",
+                  "dataCustodian": "[UBICA Ecuador](https://geo.ubica.ec",
+                  "description":"Short wave infrared spectral range (SWIR)",
+                  "url": "http://ubica.ec:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"temporal:2019-09-09_Sentinel-2B L1C_SWIR",
+                  "type": "wms",
+                  "zoomOnEnable":true,
+                  "opacity":1
+                },
+                {
+                  "name": "True Color - Imágen Satélite Séntinel 2 / 2B L1C",
+                  "dataCustodian": "[UBICA Ecuador](https://geo.ubica.ec",
+                  "description":"Short wave infrared spectral range (SWIR)",
+                  "url": "http://ubica.ec:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+                  "layers":"temporal:2019-09-09_Sentinel-2B_L1C_True_color",
+                  "type": "wms",
+                  "zoomOnEnable":true,
+                  "opacity":1
+                }
+              ]
+
+            }, 
+            {
               "name": "Ortofoto: Minas Ilegales: La Merced - Buenos aires",
               "dataCustodian": "[IGM](http://www.geoportaligm.gob.ec)",
               "url": "http://www.geoportaligm.gob.ec/orto/wms?service=wms&version=1.3.0",
