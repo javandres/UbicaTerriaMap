@@ -973,6 +973,26 @@
           ]
         },
         {
+          "name": "Mapas Históricos",
+          "type": "group",
+          "preserveOrder": true,
+          "isOpen": false,
+          "items":[
+            {
+              "name": "Carta de la Republica de Colombia, 1840",
+              "dataCustodian": "[UBICA Ecuador](https://geo.ubica.ec",
+              "description":"Carta de la Republica de Colombia dividida por Departamentes. Lith. de Thierry Frs. a Paris. (Caracas 1840)",
+              "url": "http://ubica.ec:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"historicos:Carta_ Republica_Colombia_departamentos_1840",
+              "type": "wms",
+              "zoomOnEnable":true,
+              "opacity":1
+            }
+          ]  
+
+            
+        },    
+        {
           "name": "Medio Ambiente",
           "type": "group",
           "preserveOrder": true,

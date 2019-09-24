@@ -59,7 +59,10 @@
         "190.152.147.234",
         "arcgis.eeq.com.ec",
         "ortofotos.sigtierras.gob.ec",
-        "geoportal.inclusion.gob.ec"
+        "geoportal.inclusion.gob.ec",
+        "geo.etapa.net.ec:443",
+        "geo.etapa.net.ec",
+        "maps.georeferencer.com:443"
     ],
 
     "shareUrlPrefixes": {
