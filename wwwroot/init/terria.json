@@ -1004,6 +1004,15 @@
               "layers":"historicos:Ecuador_Granada_Venezuela_Brazil_Guayana_1844",
               "type": "wms",
               "opacity":1
+            },
+            {
+              "name": "Carta Geografica del Ecuador. Dr. Teodoro Wolf, 1892",
+              "dataCustodian": "[UBICA Ecuador](https://geo.ubica.ec",
+              "description":"Carta Geografica del Ecuador por Dr. Teodoro Wolf, publicada por orden del Supremo Gobierno de la Republica y Trabajada Bajo las Presidencias de los EE. Senores Dr. D.J.M. Placido Caamano y Dr. D. Antonio Flores. 1892 ... Instituto geografico de H. Wagner & E. Debes en Leipzig. (with) La Region Oriental Del Ecuador. (with) Archipielago De Galapagos",
+              "url": "http://ubica.ec:8600/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",
+              "layers":"historicos:Carta_Geografica_del_Ecuador_TWolf_1892",
+              "type": "wms",
+              "opacity":1
             }
           ]  
 
